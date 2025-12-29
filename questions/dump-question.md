@@ -6103,8 +6103,7 @@ A company has a workload in an AWS Region. Customers connect to and access the w
 
 Which combination of steps will meet these requirements with the MOST operational eciency? (Choose three.)
 
-A. Register the required domain in a registrar. Create a wildcard custom domain name in a Route 53 hosted zone and record in the zone that points to the API Gateway endpoint.
-
+- A. Register the required domain in a registrar. Create a wildcard custom domain name in a Route 53 hosted zone and record in the zone that points to the API Gateway endpoint.
 - B. Request a wildcard certicate that matches the domains in AWS Certicate Manager (ACM) in a different Region.
 - C. Create hosted zones for each customer as required in Route 53. Create zone records that point to the API Gateway endpoint.
 - D. Request a wildcard certicate that matches the custom domain name in AWS Certicate Manager (ACM) in the same Region.
