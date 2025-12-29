@@ -1,4 +1,4 @@
-$SERVICE = AWS Elastic Disaster Recovery
+$SERVICE = AWS Outposts
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
