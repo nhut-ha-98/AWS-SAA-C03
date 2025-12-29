@@ -1,4 +1,4 @@
-$SERVICE = GLUE
+$SERVICE = AppSync
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
