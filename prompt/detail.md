@@ -1,4 +1,4 @@
-$SERVICE = AppSync
+$SERVICE = AWS Elastic Disaster Recovery
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
