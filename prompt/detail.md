@@ -1,4 +1,4 @@
-$SERVICE = STS
+$SERVICE = GLUE
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
@@ -71,6 +71,16 @@ Do NOT go too deep into low-level technical details.
 - When to choose $SERVICE vs other AWS services
 - Short comparison bullets (no deep dive)
 - 🧠 Keywords: Choose when, Compare
+
+❓Q&A (TÙY CHỌN)
+- 3–7 câu hỏi & đáp án ngắn, tập trung vào các bẫy thường gặp trong exam
+- Ưu tiên dạng "tình huống ngắn" (scenario) kèm key reasoning 1–2 dòng
+- Mục tiêu: củng cố lại keyword quan trọng và phân biệt với dịch vụ dễ nhầm lẫn
+
+🏭 MÔ HÌNH / KIẾN TRÚC PHỔ BIẾN
+- 2–5 architecture pattern đơn giản, dùng emoji + keyword để dễ nhớ
+- Mô tả cực ngắn: bối cảnh ➝ dịch vụ chính ➝ flow tổng quan
+- Tập trung vào pattern hay xuất hiện trong đề thi hoặc thực tế (best practice)
 
 GENERAL RULES
 - Write explanations in VIETNAMESE.
