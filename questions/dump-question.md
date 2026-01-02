@@ -64,12 +64,12 @@ What should a solutions architect propose to ensure users see all of their docum
 ## Question #6
 
 
-A company uses NFS to store large video files in on-premises network attached storage. Each video le ranges in size from 1 MB to 500 GB. The total storage is 70 TB and is no longer growing. The company decides to migrate the video files to Amazon S3. The company must migrate the video files as soon as possible while using the least possible network bandwidth. Which solution will meet these requirements?
+A company uses NFS to store large video files in on-premises network attached storage. Each video file ranges in size from 1 MB to 500 GB. The total storage is 70 TB and is no longer growing. The company decides to migrate the video files to Amazon S3. The company must migrate the video files as soon as possible while using the least possible network bandwidth. Which solution will meet these requirements?
 
 - A. Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all files locally to the S3 bucket.
 - B. Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.
-- C. Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS le share on the S3 File Gateway. Point the new le share to the S3 bucket. Transfer the data from the existing NFS le share to the S3 File Gateway.
-- D. Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS le share on the S3 File Gateway. Point the new le share to the S3 bucket. Transfer the data from the existing NFS le share to the S3 File Gateway.
+- C. Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
+- D. Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
 
 ## Question #7
 
@@ -97,13 +97,13 @@ How should a solutions architect design the architecture to meet these requireme
 ## Question #9
 
 
-A company is running an SMB le server in its data center. The le server stores large files that are accessed frequently for the rst few days after the files are created. After 7 days the files are rarely accessed.
+A company is running an SMB file server in its data center. The file server stores large files that are accessed frequently for the rst few days after the files are created. After 7 days the files are rarely accessed.
 
-The total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide le lifecycle management to avoid future storage issues.
+The total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide file lifecycle management to avoid future storage issues.
 
 Which solution will meet these requirements?
 
-- A. Use AWS DataSync to copy data that is older than 7 days from the SMB le server to AWS.
+- A. Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.
 - B. Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.
 - C. Create an Amazon FSx for Windows File Server file system to extend the company's storage space.
 - D. Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
@@ -122,14 +122,14 @@ Which solution will meet these requirements?
 ## Question #11
 
 
-A company has an application that runs on Amazon EC2 instances and uses an Amazon Aurora database. The EC2 instances connect to the database by using user names and passwords that are stored locally in a le. The company wants to minimize the operational overhead of credential management.
+A company has an application that runs on Amazon EC2 instances and uses an Amazon Aurora database. The EC2 instances connect to the database by using user names and passwords that are stored locally in a file. The company wants to minimize the operational overhead of credential management.
 
 What should a solutions architect do to accomplish this goal?
 
 - A. Use AWS Secrets Manager. Turn on automatic rotation.
 - B. Use AWS Systems Manager Parameter Store. Turn on automatic rotation.
-- C. Create an Amazon S3 bucket to store objects that are encrypted with an AWS Key Management Service (AWS KMS) encryption key. Migrate the credential le to the S3 bucket. Point the application to the S3 bucket.
-- D. Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume for each EC2 instance. Attach the new EBS volume to each EC2 instance. Migrate the credential le to the new EBS volume. Point the application to the new EBS volume.
+- C. Create an Amazon S3 bucket to store objects that are encrypted with an AWS Key Management Service (AWS KMS) encryption key. Migrate the credential file to the S3 bucket. Point the application to the S3 bucket.
+- D. Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume for each EC2 instance. Attach the new EBS volume to each EC2 instance. Migrate the credential file to the new EBS volume. Point the application to the new EBS volume.
 
 ## Question #12
 
@@ -204,8 +204,8 @@ A solutions architect needs to design a solution that uses durable, stateless co
 
 - A. Create an Amazon Simple Queue Service (Amazon SQS) queue. Congure the S3 bucket to send a notication to the SQS queue when an image is uploaded to the S3 bucket.
 - B. Congure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue.
-- C. Congure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the le name to a text le in memory and use the text le to keep track of the images that were processed.
-- D. Launch an Amazon EC2 instance to monitor an Amazon Simple Queue Service (Amazon SQS) queue. When items are added to the queue, log the le name in a text le on the EC2 instance and invoke the Lambda function.
+- C. Congure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the file name to a text file in memory and use the text file to keep track of the images that were processed.
+- D. Launch an Amazon EC2 instance to monitor an Amazon Simple Queue Service (Amazon SQS) queue. When items are added to the queue, log the file name in a text file on the EC2 instance and invoke the Lambda function.
 - E. Congure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample Notication Service (Amazon SNS) topic with the application owner's email address for further processing.
 
 ## Question #19
@@ -376,7 +376,7 @@ A company runs an online marketplace web application on AWS. The application ser
 - A. Store the transactions data into Amazon DynamoDB. Set up a rule in DynamoDB to remove sensitive data from every transaction upon write. Use DynamoDB Streams to share the transactions data with other applications.
 - B. Stream the transactions data into Amazon Kinesis Data Firehose to store data in Amazon DynamoDB and Amazon S3. Use AWS Lambda integration with Kinesis Data Firehose to remove sensitive data. Other applications can consume the data stored in Amazon S3.
 - C. Stream the transactions data into Amazon Kinesis Data Streams. Use AWS Lambda integration to remove sensitive data from every transaction and then store the transactions data in Amazon DynamoDB. Other applications can consume the transactions data off the Kinesis data stream.
-- D. Store the batched transactions data in Amazon S3 as files. Use AWS Lambda to process every le and remove sensitive data before updating the files in Amazon S3. The Lambda function then stores the data in Amazon DynamoDB. Other applications can consume transaction files stored in Amazon S3.
+- D. Store the batched transactions data in Amazon S3 as files. Use AWS Lambda to process every file and remove sensitive data before updating the files in Amazon S3. The Lambda function then stores the data in Amazon DynamoDB. Other applications can consume transaction files stored in Amazon S3.
 
 A company hosts its multi-tier applications on AWS. For compliance, governance, auditing, and security, the company must track conguration changes on its AWS resources and record a history of API calls made to these resources.
 
@@ -591,14 +591,14 @@ A company needs to store its accounting records in Amazon S3. The records must b
 - C. Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 Glacier Deep Archive after 1 year. Use S3 Object Lock in compliance mode for a period of 10 years.
 - D. Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 year. Use S3 Object Lock in governance mode for a period of 10 years.
 
-A company runs multiple Windows workloads on AWS. The company's employees use Windows le shares that are hosted on two Amazon EC2 instances. The le shares synchronize data between themselves and maintain duplicate copies. The company wants a highly available and durable storage solution that preserves how users currently access the files.
+A company runs multiple Windows workloads on AWS. The company's employees use Windows file shares that are hosted on two Amazon EC2 instances. The file shares synchronize data between themselves and maintain duplicate copies. The company wants a highly available and durable storage solution that preserves how users currently access the files.
 
 What should a solutions architect do to meet these requirements?
 
 - A. Migrate all the data to Amazon S3. Set up IAM authentication for users to access files.
 - B. Set up an Amazon S3 File Gateway. Mount the S3 File Gateway on the existing EC2 instances.
-- C. Extend the le share environment to Amazon FSx for Windows File Server with a Multi-AZ conguration. Migrate all the data to FSx for Windows File Server.
-- D. Extend the le share environment to Amazon Elastic File System (Amazon EFS) with a Multi-AZ conguration. Migrate all the data to Amazon EFS.
+- C. Extend the file share environment to Amazon FSx for Windows File Server with a Multi-AZ conguration. Migrate all the data to FSx for Windows File Server.
+- D. Extend the file share environment to Amazon Elastic File System (Amazon EFS) with a Multi-AZ conguration. Migrate all the data to Amazon EFS.
 
 ## Question #55
 
@@ -672,7 +672,7 @@ A company is developing a two-tier web application on AWS. The company's develop
 Which solution will meet these requirements with the LEAST operational overhead?
 
 - A. Store the database credentials in the instance metadata. Use Amazon EventBridge (Amazon CloudWatch Events) rules to run a scheduled AWS Lambda function that updates the RDS credentials and instance metadata at the same time.
-- B. Store the database credentials in a conguration le in an encrypted Amazon S3 bucket. Use Amazon EventBridge (Amazon CloudWatch Events) rules to run a scheduled AWS Lambda function that updates the RDS credentials and the credentials in the conguration le at the same time. Use S3 Versioning to ensure the ability to fall back to previous values.
+- B. Store the database credentials in a conguration file in an encrypted Amazon S3 bucket. Use Amazon EventBridge (Amazon CloudWatch Events) rules to run a scheduled AWS Lambda function that updates the RDS credentials and the credentials in the conguration file at the same time. Use S3 Versioning to ensure the ability to fall back to previous values.
 - C. Store the database credentials as a secret in AWS Secrets Manager. Turn on automatic rotation for the secret. Attach the required permission to the EC2 role to grant access to the secret.
 - D. Store the database credentials as encrypted parameters in AWS Systems Manager Parameter Store. Turn on automatic rotation for the encrypted parameters. Attach the required permission to the EC2 role to grant access to the encrypted parameters.
 
@@ -696,17 +696,17 @@ Which solution meets these requirements MOST cost-effectively?
 - A. Save the .pdf files to Amazon S3. Congure an S3 PUT event to invoke an AWS Lambda function to convert the files to .jpg format and store them back in Amazon S3.
 - B. Save the .pdf files to Amazon DynamoDUse the DynamoDB Streams feature to invoke an AWS Lambda function to convert the files to .jpg format and store them back in DynamoDB.
 - C. Upload the .pdf files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic Block Store (Amazon EBS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the files to .jpg format. Save the .pdf files and the .jpg files in the EBS store.
-- D. Upload the .pdf files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the le to .jpg format. Save the .pdf files and the .jpg files in the EBS store.
+- D. Upload the .pdf files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the file to .jpg format. Save the .pdf files and the .jpg files in the EBS store.
 
 ## Question #64
 
 
-A company has more than 5 TB of le data on Windows le servers that run on premises. Users and applications interact with the data each day. The company is moving its Windows workloads to AWS. As the company continues this process, the company requires access to AWS and onpremises le storage with minimum latency. The company needs a solution that minimizes operational overhead and requires no signicant changes to the existing le access patterns. The company uses an AWS Site-to-Site VPN connection for connectivity to AWS. What should a solutions architect do to meet these requirements?
+A company has more than 5 TB of file data on Windows file servers that run on premises. Users and applications interact with the data each day. The company is moving its Windows workloads to AWS. As the company continues this process, the company requires access to AWS and onpremises file storage with minimum latency. The company needs a solution that minimizes operational overhead and requires no signicant changes to the existing file access patterns. The company uses an AWS Site-to-Site VPN connection for connectivity to AWS. What should a solutions architect do to meet these requirements?
 
-- A. Deploy and congure Amazon FSx for Windows File Server on AWS. Move the on-premises le data to FSx for Windows File Server. Recongure the workloads to use FSx for Windows File Server on AWS.
-- B. Deploy and congure an Amazon S3 File Gateway on premises. Move the on-premises le data to the S3 File Gateway. Recongure the onpremises workloads and the cloud workloads to use the S3 File Gateway.
-- C. Deploy and congure an Amazon S3 File Gateway on premises. Move the on-premises le data to Amazon S3. Recongure the workloads to use either Amazon S3 directly or the S3 File Gateway. depending on each workload's location.
-- D. Deploy and congure Amazon FSx for Windows File Server on AWS. Deploy and congure an Amazon FSx File Gateway on premises. Move the on-premises le data to the FSx File Gateway. Congure the cloud workloads to use FSx for Windows File Server on AWS. Congure the onpremises workloads to use the FSx File Gateway.
+- A. Deploy and congure Amazon FSx for Windows File Server on AWS. Move the on-premises file data to FSx for Windows File Server. Recongure the workloads to use FSx for Windows File Server on AWS.
+- B. Deploy and congure an Amazon S3 File Gateway on premises. Move the on-premises file data to the S3 File Gateway. Recongure the onpremises workloads and the cloud workloads to use the S3 File Gateway.
+- C. Deploy and congure an Amazon S3 File Gateway on premises. Move the on-premises file data to Amazon S3. Recongure the workloads to use either Amazon S3 directly or the S3 File Gateway. depending on each workload's location.
+- D. Deploy and congure Amazon FSx for Windows File Server on AWS. Deploy and congure an Amazon FSx File Gateway on premises. Move the on-premises file data to the FSx File Gateway. Congure the cloud workloads to use FSx for Windows File Server on AWS. Congure the onpremises workloads to use the FSx File Gateway.
 
 ## Question #65
 
@@ -1034,16 +1034,16 @@ A. Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Populat
 - C. Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Use the standby instance for the staging database.
 - D. Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility.
 
-A company is designing an application where users upload small files into Amazon S3. After a user uploads a le, the le requires one-time simple processing to transform the data and save the data in JSON format for later analysis.
+A company is designing an application where users upload small files into Amazon S3. After a user uploads a file, the file requires one-time simple processing to transform the data and save the data in JSON format for later analysis.
 
-Each le must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload a high number of files. On other days, users will upload a few files or no files.
+Each file must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload a high number of files. On other days, users will upload a few files or no files.
 
 Which solution meets these requirements with the LEAST operational overhead?
 
-- A. Congure Amazon EMR to read text files from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON le in an Amazon Aurora DB cluster.
-- B. Congure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON le in Amazon DynamoDB.
-- C. Congure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON le in Amazon DynamoDB.
-- D. Congure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when a new le is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON le in an Amazon Aurora DB cluster.
+- A. Congure Amazon EMR to read text files from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON file in an Amazon Aurora DB cluster.
+- B. Congure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB.
+- C. Congure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB.
+- D. Congure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when a new file is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON file in an Amazon Aurora DB cluster.
 
 ## Question #95
 
@@ -1064,12 +1064,12 @@ An Amazon EC2 administrator created the following policy associated with an IAM 
 ## Question #97
 
 
-A company has a large Microsoft SharePoint deployment running on-premises that requires Microsoft Windows shared le storage. The company wants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and integrated with Active Directory for access control.
+A company has a large Microsoft SharePoint deployment running on-premises that requires Microsoft Windows shared file storage. The company wants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and integrated with Active Directory for access control.
 
 Which solution will satisfy these requirements?
 
 - A. Congure Amazon EFS storage and set the Active Directory domain for authentication.
-- B. Create an SMB le share on an AWS Storage Gateway le gateway in two Availability Zones.
+- B. Create an SMB file share on an AWS Storage Gateway file gateway in two Availability Zones.
 - C. Create an Amazon S3 bucket and congure Microsoft Windows Server to mount it as a volume.
 - D. Create an Amazon FSx for Windows File Server file system on AWS and set the Active Directory domain for authentication.
 
@@ -1091,8 +1091,8 @@ What should the solutions architect do to resolve this issue with the LEAST oper
 
 A company is implementing a shared storage solution for a gaming application that is hosted in an on-premises data center. The company needs the ability to use Lustre clients to access data. The solution must be fully managed. Which solution meets these requirements?
 
-- A. Create an AWS Storage Gateway le gateway. Create a le share that uses the required client protocol. Connect the application server to the le share.
-- B. Create an Amazon EC2 Windows instance. Install and congure a Windows le share role on the instance. Connect the application server to the le share.
+- A. Create an AWS Storage Gateway file gateway. Create a file share that uses the required client protocol. Connect the application server to the file share.
+- B. Create an Amazon EC2 Windows instance. Install and congure a Windows file share role on the instance. Connect the application server to the file share.
 - C. Create an Amazon Elastic File System (Amazon EFS) file system, and congure it to support Lustre. Attach the file system to the origin server. Connect the application server to the file system.
 - D. Create an Amazon FSx for Lustre file system. Attach the file system to the origin server. Connect the application server to the file system.
 
@@ -1269,7 +1269,7 @@ Which solution meats these requirements?
 
 A medical records company is hosting an application on Amazon EC2 instances. The application processes customer data files that are stored on Amazon S3. The EC2 instances are hosted in public subnets. The EC2 instances access Amazon S3 over the internet, but they do not require any other network access.
 
-A new requirement mandates that the network trac for le transfers take a private route and not be sent over the internet. Which change to the network architecture should a solutions architect recommend to meet this requirement?
+A new requirement mandates that the network trac for file transfers take a private route and not be sent over the internet. Which change to the network architecture should a solutions architect recommend to meet this requirement?
 
 - A. Create a NAT gateway. Congure the route table for the public subnets to send trac to Amazon S3 through the NAT gateway.
 - B. Congure the security group for the EC2 instances to restrict outbound trac so that only trac to the S3 prex list is permitted.
@@ -1444,7 +1444,7 @@ What should a solutions architect do to maintain the desired performance across 
 
 ## Question #131
 
-A company is developing a le-sharing application that will use an Amazon S3 bucket for storage. The company wants to serve all the files through an Amazon CloudFront distribution. The company does not want the files to be accessible through direct navigation to the S3 URL. What should a solutions architect do to meet these requirements?
+A company is developing a file-sharing application that will use an Amazon S3 bucket for storage. The company wants to serve all the files through an Amazon CloudFront distribution. The company does not want the files to be accessible through direct navigation to the S3 URL. What should a solutions architect do to meet these requirements?
 
 - A. Write individual policies for each S3 bucket to grant read permission for only CloudFront access.
 - B. Create an IAM user. Grant the user read permission to objects in the S3 bucket. Assign the user to CloudFront.
@@ -1690,7 +1690,7 @@ Which action should the company take to meet these requirements MOST cost-effect
 ## Question #154
 
 
-A company needs to save the results from a medical trial to an Amazon S3 repository. The repository must allow a few scientists to add new files and must restrict all other users to read-only access. No users can have the ability to modify or delete any files in the repository. The company must keep every le in the repository for a minimum of 1 year after its creation date. Which solution will meet these requirements?
+A company needs to save the results from a medical trial to an Amazon S3 repository. The repository must allow a few scientists to add new files and must restrict all other users to read-only access. No users can have the ability to modify or delete any files in the repository. The company must keep every file in the repository for a minimum of 1 year after its creation date. Which solution will meet these requirements?
 
 - A. Use S3 Object Lock in governance mode with a legal hold of 1 year.
 - B. Use S3 Object Lock in compliance mode with a retention period of 365 days.
@@ -2209,11 +2209,11 @@ A telemarketing company is designing its customer call center functionality on A
 
 Which solution will meet these requirements?
 
-- A. Use Amazon Rekognition for multiple speaker recognition. Store the transcript files in Amazon S3. Use machine learning models for transcript le analysis.
+- A. Use Amazon Rekognition for multiple speaker recognition. Store the transcript files in Amazon S3. Use machine learning models for transcript file analysis.
 
-- B. Use Amazon Transcribe for multiple speaker recognition. Use Amazon Athena for transcript le analysis.
-- C. Use Amazon Translate for multiple speaker recognition. Store the transcript files in Amazon Redshift. Use SQL queries for transcript le analysis.
-- D. Use Amazon Rekognition for multiple speaker recognition. Store the transcript files in Amazon S3. Use Amazon Textract for transcript le analysis.
+- B. Use Amazon Transcribe for multiple speaker recognition. Use Amazon Athena for transcript file analysis.
+- C. Use Amazon Translate for multiple speaker recognition. Store the transcript files in Amazon Redshift. Use SQL queries for transcript file analysis.
+- D. Use Amazon Rekognition for multiple speaker recognition. Store the transcript files in Amazon S3. Use Amazon Textract for transcript file analysis.
 
 ## Question #200
 
@@ -2319,7 +2319,7 @@ Which solution will meet these requirements?
 - A. Create an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.
 - B. Create a gateway VPC endpoint for Amazon S3 in the Availability Zone where the EC2 instance is located. Attach appropriate security groups to the endpoint. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.
 - C. Run the nslookup tool from inside the EC2 instance to obtain the private IP address of the S3 bucket's service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.
-- D. Use the AWS provided, publicly available ip-ranges.json le to obtain the private IP address of the S3 bucket's service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.
+- D. Use the AWS provided, publicly available ip-ranges.json file to obtain the private IP address of the S3 bucket's service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance's IAM role for access.
 
 ## Question #209
 
@@ -2411,7 +2411,7 @@ A company has a serverless website with millions of objects in an Amazon S3 buck
 Which solution will meet these requirements with the LEAST amount of effort?
 
 - A. Create a new S3 bucket. Turn on the default encryption settings for the new S3 bucket. Download all existing objects to temporary local storage. Upload the objects to the new S3 bucket.
-- B. Turn on the default encryption settings for the S3 bucket. Use the S3 Inventory feature to create a .csv le that lists the unencrypted objects. Run an S3 Batch Operations job that uses the copy command to encrypt those objects.
+- B. Turn on the default encryption settings for the S3 bucket. Use the S3 Inventory feature to create a .csv file that lists the unencrypted objects. Run an S3 Batch Operations job that uses the copy command to encrypt those objects.
 - C. Create a new encryption key by using AWS Key Management Service (AWS KMS). Change the settings on the S3 bucket to use server-side encryption with AWS KMS managed encryption keys (SSE-KMS). Turn on versioning for the S3 bucket.
 - D. Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket's objects. Sort by the encryption eld. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket.
 
@@ -2711,11 +2711,11 @@ Which policy should be used to meet this requirement?
 ## Question #243
 
 
-A medical research lab produces data that is related to a new study. The lab wants to make the data available with minimum latency to clinics across the country for their on-premises, le-based applications. The data files are stored in an Amazon S3 bucket that has read-only permissions for each clinic.
+A medical research lab produces data that is related to a new study. The lab wants to make the data available with minimum latency to clinics across the country for their on-premises, file-based applications. The data files are stored in an Amazon S3 bucket that has read-only permissions for each clinic.
 
 What should a solutions architect recommend to meet these requirements?
 
-- A. Deploy an AWS Storage Gateway le gateway as a virtual machine (VM) on premises at each clinic
+- A. Deploy an AWS Storage Gateway file gateway as a virtual machine (VM) on premises at each clinic
 - B. Migrate the files to each clinic's on-premises applications by using AWS DataSync for processing.
 - C. Deploy an AWS Storage Gateway volume gateway as a virtual machine (VM) on premises at each clinic.
 - D. Attach an Amazon Elastic File System (Amazon EFS) file system to each clinic's on-premises servers.
@@ -2784,9 +2784,9 @@ A company is implementing a shared storage solution for a media application that
 
 Which AWS solution meets these requirements?
 
-- A. Create an AWS Storage Gateway volume gateway. Create a le share that uses the required client protocol. Connect the application server to the le share.
+- A. Create an AWS Storage Gateway volume gateway. Create a file share that uses the required client protocol. Connect the application server to the file share.
 - B. Create an AWS Storage Gateway tape gateway. Congure tapes to use Amazon S3. Connect the application server to the tape gateway.
-- C. Create an Amazon EC2 Windows instance. Install and congure a Windows le share role on the instance. Connect the application server to the le share.
+- C. Create an Amazon EC2 Windows instance. Install and congure a Windows file share role on the instance. Connect the application server to the file share.
 - D. Create an Amazon FSx for Windows File Server file system. Attach the file system to the origin server. Connect the application server to the file system.
 
 ## Question #250
@@ -2893,7 +2893,7 @@ How should the company move the data to Amazon S3 to meet these requirements?
 - C. Create an Amazon EventBridge rule to invoke an AWS Lambda function on a schedule. Congure the Lambda function to send the EC2 Auto Scaling status data directly to Amazon S3.
 - D. Use a bootstrap script during the launch of an EC2 instance to install Amazon Kinesis Agent. Congure Kinesis Agent to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.
 
-A company has an application that places hundreds of .csv files into an Amazon S3 bucket every hour. The files are 1 GB in size. Each time a le is uploaded, the company needs to convert the le to Apache Parquet format and place the output le into an S3 bucket.
+A company has an application that places hundreds of .csv files into an Amazon S3 bucket every hour. The files are 1 GB in size. Each time a file is uploaded, the company needs to convert the file to Apache Parquet format and place the output file into an S3 bucket.
 
 Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2917,7 +2917,7 @@ Which solution should a solutions architect recommend to meet these requirements
 ## Question #260
 
 
-A company's compliance team needs to move its le shares to AWS. The shares run on a Windows Server SMB le share. A self-managed onpremises Active Directory controls access to the files and folders.
+A company's compliance team needs to move its file shares to AWS. The shares run on a Windows Server SMB file share. A self-managed onpremises Active Directory controls access to the files and folders.
 
 The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server file system.
 
@@ -3233,15 +3233,15 @@ A company wants to migrate a Windows-based application from on premises to the A
 
 How should a solutions architect design the architecture to meet these requirements?
 
-- A. Host all three tiers on Amazon EC2 instances. Use Amazon FSx File Gateway for le sharing between the tiers.
-- B. Host all three tiers on Amazon EC2 instances. Use Amazon FSx for Windows File Server for le sharing between the tiers.
-- C. Host the application tier and the business tier on Amazon EC2 instances. Host the database tier on Amazon RDS. Use Amazon Elastic File System (Amazon EFS) for le sharing between the tiers.
-- D. Host the application tier and the business tier on Amazon EC2 instances. Host the database tier on Amazon RDS. Use a Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volume for le sharing between the tiers.
+- A. Host all three tiers on Amazon EC2 instances. Use Amazon FSx File Gateway for file sharing between the tiers.
+- B. Host all three tiers on Amazon EC2 instances. Use Amazon FSx for Windows File Server for file sharing between the tiers.
+- C. Host the application tier and the business tier on Amazon EC2 instances. Host the database tier on Amazon RDS. Use Amazon Elastic File System (Amazon EFS) for file sharing between the tiers.
+- D. Host the application tier and the business tier on Amazon EC2 instances. Host the database tier on Amazon RDS. Use a Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volume for file sharing between the tiers.
 
 ## Question #288
 
 
-A company is migrating a Linux-based web server group to AWS. The web servers must access files in a shared le store for some content. The company must not make any changes to the application.
+A company is migrating a Linux-based web server group to AWS. The web servers must access files in a shared file store for some content. The company must not make any changes to the application.
 
 What should a solutions architect do to meet these requirements?
 
@@ -3302,7 +3302,7 @@ A company has an on-premises volume backup solution that has reached its end of 
 Which solution meets these requirements?
 
 - A. Use AWS Snowball to migrate data out of the on-premises solution to Amazon S3. Congure on-premises systems to mount the Snowball S3 endpoint to provide local access to the data.
-- B. Use AWS Snowball Edge to migrate data out of the on-premises solution to Amazon S3. Use the Snowball Edge le interface to provide onpremises systems with local access to the data.
+- B. Use AWS Snowball Edge to migrate data out of the on-premises solution to Amazon S3. Use the Snowball Edge file interface to provide onpremises systems with local access to the data.
 - C. Use AWS Storage Gateway and congure a cached volume gateway. Run the Storage Gateway software appliance on premises and congure a percentage of data to cache locally. Mount the gateway storage volumes to provide local access to the data.
 - D. Use AWS Storage Gateway and congure a stored volume gateway. Run the Storage Gateway software appliance on premises and map the gateway storage volumes to on-premises storage. Mount the gateway storage volumes to provide local access to the data.
 
@@ -3389,7 +3389,7 @@ What should a solutions architect do to meet these requirements MOST cost-effect
 - C. Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon Aurora Reserved Instances.
 - D. Migrate the application layer to Amazon EC2 On-Demand Instances. Migrate the data storage layer to Amazon RDS Reserved Instances.
 
-A university research laboratory needs to migrate 30 TB of data from an on-premises Windows le server to Amazon FSx for Windows File Server. The laboratory has a 1 Gbps network link that many other departments in the university share.
+A university research laboratory needs to migrate 30 TB of data from an on-premises Windows file server to Amazon FSx for Windows File Server. The laboratory has a 1 Gbps network link that many other departments in the university share.
 
 The laboratory wants to implement a data migration service that will maximize the performance of the data transfer. However, the laboratory needs to be able to control the amount of bandwidth that the service uses to minimize the impact on other departments. The data migration must take place within the next 5 days.
 
@@ -3444,7 +3444,7 @@ A company is designing a shared storage solution for a gaming application that i
 Which AWS solution meets these requirements?
 
 - A. Create an AWS DataSync task that shares the data as a mountable file system. Mount the file system to the application server.
-- B. Create an Amazon EC2 Windows instance. Install and congure a Windows le share role on the instance. Connect the application server to the le share.
+- B. Create an Amazon EC2 Windows instance. Install and congure a Windows file share role on the instance. Connect the application server to the file share.
 - C. Create an Amazon FSx for Windows File Server file system. Attach the file system to the origin server. Connect the application server to the file system.
 - D. Create an Amazon S3 bucket. Assign an IAM role to the application to grant access to the S3 bucket. Mount the S3 bucket to the application server.
 
@@ -3656,16 +3656,16 @@ Which system architecture should the solutions architect recommend?
 - C. Use Amazon Route 53 to direct incoming sensor messages to an AWS Lambda function. Congure the Lambda function to process the messages and save the results to an Amazon DynamoDB table.
 - D. Create a gateway VPC endpoint for Amazon S3. Congure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint.
 
-A company wants to implement a disaster recovery plan for its primary on-premises le storage volume. The le storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The le storage volume holds hundreds of terabytes (TB) of data.
+A company wants to implement a disaster recovery plan for its primary on-premises file storage volume. The file storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The file storage volume holds hundreds of terabytes (TB) of data.
 
-The company wants to ensure that end users retain immediate access to all le types from the on-premises systems without experiencing latency.
+The company wants to ensure that end users retain immediate access to all file types from the on-premises systems without experiencing latency.
 
 Which solution will meet these requirements with the LEAST amount of change to the company's existing infrastructure?
 
 - A. Provision an Amazon S3 File Gateway as a virtual machine (VM) that is hosted on premises. Set the local cache to 10 TB. Modify existing applications to access the files through the NFS protocol. To recover from a disaster, provision an Amazon EC2 instance and mount the S3 bucket that contains the files.
 - B. Provision an AWS Storage Gateway tape gateway. Use a data backup solution to back up all existing data to a virtual tape library. Congure the data backup solution to run nightly after the initial backup is complete. To recover from a disaster, provision an Amazon EC2 instance and restore the data to an Amazon Elastic Block Store (Amazon EBS) volume from the volumes in the virtual tape library.
-- C. Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing le server by using iSCSI, and copy all files to the storage volume. Congure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.
-- D. Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing le storage volume. Mount the Volume Gateway stored volume to the existing le server by using iSCSI, and copy all files to the storage volume. Congure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.
+- C. Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing file server by using iSCSI, and copy all files to the storage volume. Congure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.
+- D. Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing file storage volume. Mount the Volume Gateway stored volume to the existing file server by using iSCSI, and copy all files to the storage volume. Congure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.
 
 ## Question #325
 
@@ -3752,11 +3752,11 @@ What should a solutions architect do to meet these requirements?
 
 A company needs to provide its employees with secure access to condential and sensitive files. The company wants to ensure that the files can be accessed only by authorized users. The files must be downloaded securely to the employees' devices.
 
-The files are stored in an on-premises Windows le server. However, due to an increase in remote usage, the le server is running out of capacity. .
+The files are stored in an on-premises Windows file server. However, due to an increase in remote usage, the file server is running out of capacity. .
 
 Which solution will meet these requirements?
 
-- A. Migrate the le server to an Amazon EC2 instance in a public subnet. Congure the security group to limit inbound trac to the employees' IP addresses.
+- A. Migrate the file server to an Amazon EC2 instance in a public subnet. Congure the security group to limit inbound trac to the employees' IP addresses.
 - B. Migrate the files to an Amazon FSx for Windows File Server file system. Integrate the Amazon FSx file system with the on-premises Active Directory. Congure AWS Client VPN.
 - C. Migrate the files to Amazon S3, and create a private VPC endpoint. Create a signed URL to allow download.
 - D. Migrate the files to Amazon S3, and create a public VPC endpoint. Allow employees to sign on with AWS IAM Identity Center (AWS Single Sign-On).
@@ -3800,8 +3800,8 @@ What should a solutions architect do to meet this requirement with the LEAST ope
 
 - A. Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Congure a custom rotation period of 14 days.
 - B. Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.
-- C. Store a le that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) file system. Mount the EFS file system in all EC2 instances of the application tier. Restrict the access to the le on the file system so that the application can read the le and that only super users can modify the le. Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the le.
-- D. Store a le that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials. Download the le to the application regularly to ensure that the correct credentials are used. Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the le in the S3 bucket.
+- C. Store a file that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) file system. Mount the EFS file system in all EC2 instances of the application tier. Restrict the access to the file on the file system so that the application can read the file and that only super users can modify the file. Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the file.
+- D. Store a file that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials. Download the file to the application regularly to ensure that the correct credentials are used. Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the file in the S3 bucket.
 
 ## Question #337
 
@@ -4460,9 +4460,9 @@ A payment processing company records all voice communication with its customers 
 What should a solutions architect do to meet these requirements?
 
 - A. Process the audio files by using Amazon Kinesis Video Streams. Use an AWS Lambda function to scan for known PII patterns.
-- B. When an audio le is uploaded to the S3 bucket, invoke an AWS Lambda function to start an Amazon Textract task to analyze the call recordings.
-- C. Congure an Amazon Transcribe transcription job with PII redaction turned on. When an audio le is uploaded to the S3 bucket, invoke an AWS Lambda function to start the transcription job. Store the output in a separate S3 bucket.
-- D. Create an Amazon Connect contact ow that ingests the audio files with transcription turned on. Embed an AWS Lambda function to scan for known PII patterns. Use Amazon EventBridge to start the contact ow when an audio le is uploaded to the S3 bucket.
+- B. When an audio file is uploaded to the S3 bucket, invoke an AWS Lambda function to start an Amazon Textract task to analyze the call recordings.
+- C. Congure an Amazon Transcribe transcription job with PII redaction turned on. When an audio file is uploaded to the S3 bucket, invoke an AWS Lambda function to start the transcription job. Store the output in a separate S3 bucket.
+- D. Create an Amazon Connect contact ow that ingests the audio files with transcription turned on. Embed an AWS Lambda function to scan for known PII patterns. Use Amazon EventBridge to start the contact ow when an audio file is uploaded to the S3 bucket.
 
 A company is running a multi-tier ecommerce web application in the AWS Cloud. The application runs on Amazon EC2 instances with an Amazon RDS for MySQL Multi-AZ DB instance. Amazon RDS is congured with the latest generation DB instance with 2,000 GB of storage in a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. The database performance affects the application during periods of high demand.
 
@@ -4628,7 +4628,7 @@ A company is implementing a shared storage solution for a gaming application tha
 Which solution meets these requirements?
 
 - A. Create an AWS DataSync task that shares the data as a mountable file system. Mount the file system to the application server.
-- B. Create an AWS Storage Gateway le gateway. Create a le share that uses the required client protocol. Connect the application server to the le share.
+- B. Create an AWS Storage Gateway file gateway. Create a file share that uses the required client protocol. Connect the application server to the file share.
 - C. Create an Amazon Elastic File System (Amazon EFS) file system, and congure it to support Lustre. Attach the file system to the origin server. Connect the application server to the file system.
 - D. Create an Amazon FSx for Lustre file system. Attach the file system to the origin server. Connect the application server to the file system.
 
@@ -4646,14 +4646,14 @@ Which solution will meet these requirements?
 ## Question #409
 
 
-A solutions architect must migrate a Windows Internet Information Services (IIS) web application to AWS. The application currently relies on a le share hosted in the user's on-premises network-attached storage (NAS). The solutions architect has proposed migrating the IIS web servers to Amazon EC2 instances in multiple Availability Zones that are connected to the storage solution, and conguring an Elastic Load Balancer attached to the instances.
+A solutions architect must migrate a Windows Internet Information Services (IIS) web application to AWS. The application currently relies on a file share hosted in the user's on-premises network-attached storage (NAS). The solutions architect has proposed migrating the IIS web servers to Amazon EC2 instances in multiple Availability Zones that are connected to the storage solution, and conguring an Elastic Load Balancer attached to the instances.
 
-Which replacement to the on-premises le share is MOST resilient and durable?
+Which replacement to the on-premises file share is MOST resilient and durable?
 
-- A. Migrate the le share to Amazon RDS.
-- B. Migrate the le share to AWS Storage Gateway.
-- C. Migrate the le share to Amazon FSx for Windows File Server.
-- D. Migrate the le share to Amazon Elastic File System (Amazon EFS).
+- A. Migrate the file share to Amazon RDS.
+- B. Migrate the file share to AWS Storage Gateway.
+- C. Migrate the file share to Amazon FSx for Windows File Server.
+- D. Migrate the file share to Amazon Elastic File System (Amazon EFS).
 
 ## Question #410
 
@@ -4900,7 +4900,7 @@ The images become irrelevant after 1 month, but the .csv files must be kept to t
 Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)
 
 - A. Launch an Amazon EC2 Spot Instance that downloads the .csv files every hour, generates the image files, and uploads the images to the S3 bucket.
-- B. Design an AWS Lambda function that converts the .csv files into images and stores the images in the S3 bucket. Invoke the Lambda function when a .csv le is uploaded.
+- B. Design an AWS Lambda function that converts the .csv files into images and stores the images in the S3 bucket. Invoke the Lambda function when a .csv file is uploaded.
 - C. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 Glacier 1 day after they are uploaded. Expire the image files after 30 days.
 - D. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) 1 day after they are uploaded. Expire the image files after 30 days.
 - E. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) 1 day after they are uploaded. Keep the image files in Reduced Redundancy Storage (RRS).
@@ -5665,7 +5665,7 @@ A company uses on-premises servers to host its applications. The company is runn
 Which combination of actions should a solutions architect take to meet these requirements? (Choose two.)
 
 - A. Mount Amazon S3 as a file system to the on-premises servers.
-- B. Deploy an AWS Storage Gateway le gateway to replace NFS storage.
+- B. Deploy an AWS Storage Gateway file gateway to replace NFS storage.
 - C. Deploy AWS Snowball Edge to provision NFS mounts to on-premises servers.
 - D. Deploy an AWS Storage Gateway volume gateway to replace the block storage.
 - E. Deploy Amazon Elastic File System (Amazon EFS) volumes and mount them to on-premises servers.
@@ -5707,13 +5707,13 @@ Which solution will meet these requirements?
 
 ## Question #500
 
-A company has multiple Windows le servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permissions must be preserved to ensure that access rights do not change.
+A company has multiple Windows file servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permissions must be preserved to ensure that access rights do not change.
 
 Which solutions will meet these requirements? (Choose two.)
 
 - A. Deploy AWS DataSync agents on premises. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server file system.
-- B. Copy the shares on each le server into Amazon S3 buckets by using the AWS CLI. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
-- C. Remove the drives from each le server. Ship the drives to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+- B. Copy the shares on each file server into Amazon S3 buckets by using the AWS CLI. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+- C. Remove the drives from each file server. Ship the drives to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
 - D. Order an AWS Snowcone device. Connect the device to the on-premises network. Launch AWS DataSync agents on the device. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server file system.
 - E. Order an AWS Snowball Edge Storage Optimized device. Connect the device to the on-premises network. Copy data to the device by using the AWS CLI. Ship the device back to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
 
@@ -5782,7 +5782,7 @@ A social media company is building a feature for its website. The feature will g
 Which solution meets these requirements with the MOST scalability?
 
 - A. Upload files from the user's browser to the application servers. Transfer the files to an Amazon S3 bucket.
-- B. Provision an AWS Storage Gateway le gateway. Upload files directly from the user's browser to the le gateway.
+- B. Provision an AWS Storage Gateway file gateway. Upload files directly from the user's browser to the file gateway.
 - C. Generate Amazon S3 presigned URLs in the application. Upload files directly from the user's browser into an S3 bucket.
 - D. Provision an Amazon Elastic File System (Amazon EFS) file system. Upload files directly from the user's browser to the file system.
 
@@ -6052,13 +6052,13 @@ Which solution will provide the MOST fault tolerance?
 
 A data analytics company wants to migrate its batch processing system to AWS. The company receives thousands of small data files periodically during the day through FTP . An on-premises batch job processes the data files overnight. However, the batch job takes hours to nish running.
 
-The company wants the AWS solution to process incoming data files as soon as possible with minimal changes to the FTP clients that send the files. The solution must delete the incoming data files after the files have been processed successfully. Processing for each le needs to take 3-8 minutes.
+The company wants the AWS solution to process incoming data files as soon as possible with minimal changes to the FTP clients that send the files. The solution must delete the incoming data files after the files have been processed successfully. Processing for each file needs to take 3-8 minutes.
 
 Which solution will meet these requirements in the MOST operationally ecient way?
 
 - A. Use an Amazon EC2 instance that runs an FTP server to store incoming files as objects in Amazon S3 Glacier Flexible Retrieval. Congure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the objects nightly from S3 Glacier Flexible Retrieval. Delete the objects after the job has processed the objects.
 - B. Use an Amazon EC2 instance that runs an FTP server to store incoming files on an Amazon Elastic Block Store (Amazon EBS) volume. Congure a job queue in AWS Batch. Use Amazon EventBridge rules to invoke the job to process the files nightly from the EBS volume. Delete the files after the job has processed the files.
-- C. Use AWS Transfer Family to create an FTP server to store incoming files on an Amazon Elastic Block Store (Amazon EBS) volume. Congure a job queue in AWS Batch. Use an Amazon S3 event notication when each le arrives to invoke the job in AWS Batch. Delete the files after the job has processed the files.
+- C. Use AWS Transfer Family to create an FTP server to store incoming files on an Amazon Elastic Block Store (Amazon EBS) volume. Congure a job queue in AWS Batch. Use an Amazon S3 event notication when each file arrives to invoke the job in AWS Batch. Delete the files after the job has processed the files.
 - D. Use AWS Transfer Family to create an FTP server to store incoming files in Amazon S3 Standard. Create an AWS Lambda function to process the files and to delete the files after they are processed. Use an S3 event notication to invoke the Lambda function when the files arrive.
 
 ## Question #529
@@ -6220,7 +6220,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 ## Question #542
 
 
-A media company uses an Amazon CloudFront distribution to deliver content over the internet. The company wants only premium customers to have access to the media streams and le content. The company stores all content in an Amazon S3 bucket. The company also delivers content on demand to customers for a specic purpose, such as movie rentals or music downloads.
+A media company uses an Amazon CloudFront distribution to deliver content over the internet. The company wants only premium customers to have access to the media streams and file content. The company stores all content in an Amazon S3 bucket. The company also delivers content on demand to customers for a specic purpose, such as movie rentals or music downloads.
 
 Which solution will meet these requirements?
 
@@ -6249,8 +6249,8 @@ A retail company uses a regional Amazon API Gateway API for its public REST APIs
 Which solution will meet these requirements?
 
 - A. Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point an appropriate percentage of trac to the canary stage. After API verication, promote the canary stage to the production stage.
-- B. Create a new API Gateway endpoint with a new version of the API in OpenAPI YAML le format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.
-- C. Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON le format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.
+- B. Create a new API Gateway endpoint with a new version of the API in OpenAPI YAML file format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.
+- C. Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON file format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.
 - D. Create a new API Gateway endpoint with new versions of the API denitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name.
 
 ## Question #545
@@ -6491,7 +6491,7 @@ Which solution meets these requirements?
 - A. Store sensitive data in an Amazon Elastic Block Store (Amazon EBS) volume. Use EBS encryption to encrypt the data. Use an IAM instance role to restrict access.
 - B. Store sensitive data in Amazon RDS for MySQL. Use AWS Key Management Service (AWS KMS) client-side encryption to encrypt the data.
 - C. Store sensitive data in Amazon S3. Use AWS Key Management Service (AWS KMS) server-side encryption to encrypt the data. Use S3 bucket policies to restrict access.
-- D. Store sensitive data in Amazon FSx for Windows Server. Mount the le share on application servers. Use Windows le permissions to restrict access.
+- D. Store sensitive data in Amazon FSx for Windows Server. Mount the file share on application servers. Use Windows file permissions to restrict access.
 
 ## Question #565
 
@@ -6868,7 +6868,7 @@ Which solution will meet these requirements?
 ## Question #598
 
 
-A research company uses on-premises devices to generate data for analysis. The company wants to use the AWS Cloud to analyze the data. The devices generate .csv files and support writing the data to an SMB le share. Company analysts must be able to use SQL commands to query the data. The analysts will run queries periodically throughout the day.
+A research company uses on-premises devices to generate data for analysis. The company wants to use the AWS Cloud to analyze the data. The devices generate .csv files and support writing the data to an SMB file share. Company analysts must be able to use SQL commands to query the data. The analysts will run queries periodically throughout the day.
 
 Which combination of steps will meet these requirements MOST cost-effectively? (Choose three.)
 
@@ -7107,7 +7107,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 ## Question #618
 
 
-A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB le share mounted as a volume in the us-east-1 Region. The company has a recovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service disruptions. The company needs to replicate the file system to the us-west-2 Region. The replicated data must not be deleted by any user for 5 years.
+A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB file share mounted as a volume in the us-east-1 Region. The company has a recovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service disruptions. The company needs to replicate the file system to the us-west-2 Region. The replicated data must not be deleted by any user for 5 years.
 
 Which solution will meet these requirements?
 
@@ -7306,7 +7306,7 @@ Which solution will meet these requirements?
 ## Question #635
 
 
-A company uses Amazon FSx for NetApp ONTAP in its primary AWS Region for CIFS and NFS le shares. Applications that run on Amazon EC2 instances access the le shares. The company needs a storage disaster recovery (DR) solution in a secondary Region. The data that is replicated in the secondary Region needs to be accessed by using the same protocols as the primary Region.
+A company uses Amazon FSx for NetApp ONTAP in its primary AWS Region for CIFS and NFS file shares. Applications that run on Amazon EC2 instances access the file shares. The company needs a storage disaster recovery (DR) solution in a secondary Region. The data that is replicated in the secondary Region needs to be accessed by using the same protocols as the primary Region.
 
 Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -7771,11 +7771,11 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 ## Question #673
 
-A company runs an SMB le server in its data center. The le server stores large files that the company frequently accesses for up to 7 days after the le creation date. After 7 days, the company needs to be able to access the files with a maximum retrieval time of 24 hours.
+A company runs an SMB file server in its data center. The file server stores large files that the company frequently accesses for up to 7 days after the file creation date. After 7 days, the company needs to be able to access the files with a maximum retrieval time of 24 hours.
 
 Which solution will meet these requirements?
 
-- A. Use AWS DataSync to copy data that is older than 7 days from the SMB le server to AWS.
+- A. Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.
 - B. Create an Amazon S3 File Gateway to increase the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.
 - C. Create an Amazon FSx File Gateway to increase the company's storage space. Create an Amazon S3 Lifecycle policy to transition the data after 7 days.
 - D. Congure access to Amazon S3 for each user. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
@@ -7858,7 +7858,7 @@ Which combination of steps will meet these requirements? (Choose three.)
 ## Question #680
 
 
-A solutions architect needs to copy files from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) file system and another S3 bucket. The files must be copied continuously. New files are added to the original S3 bucket consistently. The copied files should be overwritten only if the source le changes.
+A solutions architect needs to copy files from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) file system and another S3 bucket. The files must be copied continuously. New files are added to the original S3 bucket consistently. The copied files should be overwritten only if the source file changes.
 
 Which solution will meet these requirements with the LEAST operational overhead?
 
