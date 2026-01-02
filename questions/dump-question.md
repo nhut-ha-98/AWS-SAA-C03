@@ -6949,6 +6949,9 @@ Which solution will meet these requirements?
 - C. Use the AWS CLI and multiple copy processes to send the data directly to Amazon S3.
 - D. Order multiple AWS Snowball devices. Copy the data to the devices. Send the devices to AWS to copy the data to Amazon S3.
 
+
+## Question #605
+
 A company has several on-premises Internet Small Computer Systems Interface (ISCSI) network storage servers. The company wants to reduce the number of these servers by moving to the AWS Cloud. A solutions architect must provide low-latency access to frequently used data and reduce the dependency on on-premises servers with a minimal number of infrastructure changes.
 
 Which solution will meet these requirements?
@@ -6983,6 +6986,8 @@ Which solution will meet these requirements MOST cost-effectively?
 - B. Increase the RDS DB instance size. Increase the storage capacity to 24 TiChange the storage type to Provisioned IOPS.
 - C. Create an Amazon S3 bucket. Update the application to store documents in the S3 bucket. Store the object metadata in the existing database.
 - D. Create an Amazon DynamoDB table. Update the application to use DynamoDB. Use AWS Database Migration Service (AWS DMS) to migrate data from the Oracle database to DynamoDB.
+
+## Question #608
 
 A company has an application that serves clients that are deployed in more than 20.000 retail storefront locations around the world. The application consists of backend web services that are exposed over HTTPS on port 443. The application is hosted on Amazon EC2 instances behind an Application Load Balancer (ALB). The retail locations communicate with the web application over the public internet. The company allows each retail location to register the IP address that the retail location has been allocated by its local ISP .
 
@@ -7019,6 +7024,8 @@ Which solution will meet these requirements?
 - C. Set up an AWS Transit Gateway connection from the VPC to the S3 buckets. Create an AWS Site-to-Site VPN connection between the company and the VPC.
 - D. Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data and feed the application instances.
 
+## Question #611
+
 A company has an application with a REST-based interface that allows data to be received in near-real time from a third-party vendor. Once received, the application processes and stores the data for further analysis. The application is running on Amazon EC2 instances.
 
 The third-party vendor has received many 503 Service Unavailable Errors when sending data to the application. When the data volume spikes, the compute capacity reaches its maximum limit and the application is unable to process all requests.
@@ -7053,6 +7060,8 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - B. Enable secrets encryption in the EKS cluster by using AWS Key Management Service (AWS KMS).
 - C. Implement an AWS Lambda function to encrypt the information by using AWS Key Management Service (AWS KMS).
 - D. Use AWS Systems Manager Parameter Store to encrypt the information by using AWS Key Management Service (AWS KMS).
+
+## Question #614
 
 A company is designing a new multi-tier web application that consists of the following components:
 

@@ -1,4 +1,4 @@
-$SERVICE = AWS Outposts
+$SERVICE = AWS Storage Gateway
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
