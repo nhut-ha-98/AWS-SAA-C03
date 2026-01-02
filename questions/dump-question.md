@@ -105,7 +105,7 @@ Which solution will meet these requirements?
 
 - A. Use AWS DataSync to copy data that is older than 7 days from the SMB le server to AWS.
 - B. Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.
-- C. Create an Amazon FSx for Windows File Server le system to extend the company's storage space.
+- C. Create an Amazon FSx for Windows File Server file system to extend the company's storage space.
 - D. Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
 
 ## Question #10
@@ -537,7 +537,7 @@ What should a solutions architect do to meet these requirements?
 - A. Move the catalog to Amazon ElastiCache for Redis.
 - B. Deploy a larger EC2 instance with a larger instance store.
 - C. Move the catalog from the instance store to Amazon S3 Glacier Deep Archive.
-- D. Move the catalog to an Amazon Elastic File System (Amazon EFS) le system.
+- D. Move the catalog to an Amazon Elastic File System (Amazon EFS) file system.
 
 ## Question #49
 
@@ -574,7 +574,7 @@ Which combination of steps should a solutions architect take to meet these requi
 ## Question #52
 
 
-A company wants to migrate its on-premises application to AWS. The application produces output files that vary in size from tens of gigabytes to hundreds of terabytes. The application data must be stored in a standard le system structure. The company wants a solution that scales automatically. is highly available, and requires minimum operational overhead. Which solution will meet these requirements?
+A company wants to migrate its on-premises application to AWS. The application produces output files that vary in size from tens of gigabytes to hundreds of terabytes. The application data must be stored in a standard file system structure. The company wants a solution that scales automatically. is highly available, and requires minimum operational overhead. Which solution will meet these requirements?
 
 - A. Migrate the application to run as containers on Amazon Elastic Container Service (Amazon ECS). Use Amazon S3 for storage.
 - B. Migrate the application to run as containers on Amazon Elastic Kubernetes Service (Amazon EKS). Use Amazon Elastic Block Store (Amazon EBS) for storage.
@@ -948,7 +948,7 @@ A company has several web servers that need to frequently access a common Amazon
 - A. Store the database user credentials in AWS Secrets Manager. Grant the necessary IAM permissions to allow the web servers to access AWS Secrets Manager.
 - B. Store the database user credentials in AWS Systems Manager OpsCenter. Grant the necessary IAM permissions to allow the web servers to access OpsCenter.
 - C. Store the database user credentials in a secure Amazon S3 bucket. Grant the necessary IAM permissions to allow the web servers to retrieve credentials and access the database.
-- D. Store the database user credentials in files encrypted with AWS Key Management Service (AWS KMS) on the web server le system. The web server should be able to decrypt the files and access the database.
+- D. Store the database user credentials in files encrypted with AWS Key Management Service (AWS KMS) on the web server file system. The web server should be able to decrypt the files and access the database.
 
 ## Question #87
 
@@ -1071,7 +1071,7 @@ Which solution will satisfy these requirements?
 - A. Congure Amazon EFS storage and set the Active Directory domain for authentication.
 - B. Create an SMB le share on an AWS Storage Gateway le gateway in two Availability Zones.
 - C. Create an Amazon S3 bucket and congure Microsoft Windows Server to mount it as a volume.
-- D. Create an Amazon FSx for Windows File Server le system on AWS and set the Active Directory domain for authentication.
+- D. Create an Amazon FSx for Windows File Server file system on AWS and set the Active Directory domain for authentication.
 
 ## Question #98
 
@@ -1093,8 +1093,8 @@ A company is implementing a shared storage solution for a gaming application tha
 
 - A. Create an AWS Storage Gateway le gateway. Create a le share that uses the required client protocol. Connect the application server to the le share.
 - B. Create an Amazon EC2 Windows instance. Install and congure a Windows le share role on the instance. Connect the application server to the le share.
-- C. Create an Amazon Elastic File System (Amazon EFS) le system, and congure it to support Lustre. Attach the le system to the origin server. Connect the application server to the le system.
-- D. Create an Amazon FSx for Lustre le system. Attach the le system to the origin server. Connect the application server to the le system.
+- C. Create an Amazon Elastic File System (Amazon EFS) file system, and congure it to support Lustre. Attach the file system to the origin server. Connect the application server to the file system.
+- D. Create an Amazon FSx for Lustre file system. Attach the file system to the origin server. Connect the application server to the file system.
 
 ## Question #100
 
@@ -1120,11 +1120,11 @@ What should the solutions architect do to enable Internet access for the private
 ## Question #102
 
 
-A company wants to migrate an on-premises data center to AWS. The data center hosts an SFTP server that stores its data on an NFS-based le system. The server holds 200 GB of data that needs to be transferred. The server must be hosted on an Amazon EC2 instance that uses an Amazon Elastic File System (Amazon EFS) le system.
+A company wants to migrate an on-premises data center to AWS. The data center hosts an SFTP server that stores its data on an NFS-based file system. The server holds 200 GB of data that needs to be transferred. The server must be hosted on an Amazon EC2 instance that uses an Amazon Elastic File System (Amazon EFS) file system.
 
 Which combination of steps should a solutions architect take to automate this task? (Choose two.)
 
-- A. Launch the EC2 instance into the same Availability Zone as the EFS le system.
+- A. Launch the EC2 instance into the same Availability Zone as the EFS file system.
 - B. Install an AWS DataSync agent in the on-premises data center.
 - C. Create a secondary Amazon Elastic Block Store (Amazon EBS) volume on the EC2 instance for the data.
 - D. Manually use an operating system copy command to push the data to the EC2 instance.
@@ -1780,7 +1780,7 @@ Which solution will meet these requirements?
 
 A company wants to use high performance computing (HPC) infrastructure on AWS for nancial risk modeling. The company's HPC workloads run on Linux. Each HPC workow runs on hundreds of Amazon EC2 Spot Instances, is short-lived, and generates thousands of output files that are ultimately stored in persistent storage for analytics and long-term future use.
 
-The company seeks a cloud storage solution that permits the copying of on-premises data to long-term persistent storage to make data available for processing by all EC2 instances. The solution should also be a high performance le system that is integrated with persistent storage to read and write datasets and output files.
+The company seeks a cloud storage solution that permits the copying of on-premises data to long-term persistent storage to make data available for processing by all EC2 instances. The solution should also be a high performance file system that is integrated with persistent storage to read and write datasets and output files.
 
 Which combination of AWS services meets these requirements?
 
@@ -2051,14 +2051,14 @@ How can a solutions architect ensure that the application has permission to acce
 - C. Create a security group that allows access from Amazon ECS to Amazon S3, and update the launch conguration used by the ECS cluster.
 - D. Create an IAM user with S3 permissions, and then relaunch the Amazon EC2 instances for the ECS cluster while logged in as this account.
 
-A company has a Windows-based application that must be migrated to AWS. The application requires the use of a shared Windows le system attached to multiple Amazon EC2 Windows instances that are deployed across multiple Availability Zone:
+A company has a Windows-based application that must be migrated to AWS. The application requires the use of a shared Windows file system attached to multiple Amazon EC2 Windows instances that are deployed across multiple Availability Zone:
 
 What should a solutions architect do to meet this requirement?
 
 - A. Congure AWS Storage Gateway in volume gateway mode. Mount the volume to each Windows instance.
-- B. Congure Amazon FSx for Windows File Server. Mount the Amazon FSx le system to each Windows instance.
-- C. Congure a le system by using Amazon Elastic File System (Amazon EFS). Mount the EFS le system to each Windows instance.
-- D. Congure an Amazon Elastic Block Store (Amazon EBS) volume with the required size. Attach each EC2 instance to the volume. Mount the le system within the volume to each Windows instance.
+- B. Congure Amazon FSx for Windows File Server. Mount the Amazon FSx file system to each Windows instance.
+- C. Congure a file system by using Amazon Elastic File System (Amazon EFS). Mount the EFS file system to each Windows instance.
+- D. Congure an Amazon Elastic Block Store (Amazon EBS) volume with the required size. Attach each EC2 instance to the volume. Mount the file system within the volume to each Windows instance.
 
 ## Question #187
 
@@ -2718,7 +2718,7 @@ What should a solutions architect recommend to meet these requirements?
 - A. Deploy an AWS Storage Gateway le gateway as a virtual machine (VM) on premises at each clinic
 - B. Migrate the files to each clinic's on-premises applications by using AWS DataSync for processing.
 - C. Deploy an AWS Storage Gateway volume gateway as a virtual machine (VM) on premises at each clinic.
-- D. Attach an Amazon Elastic File System (Amazon EFS) le system to each clinic's on-premises servers.
+- D. Attach an Amazon Elastic File System (Amazon EFS) file system to each clinic's on-premises servers.
 
 ## Question #244
 
@@ -2787,7 +2787,7 @@ Which AWS solution meets these requirements?
 - A. Create an AWS Storage Gateway volume gateway. Create a le share that uses the required client protocol. Connect the application server to the le share.
 - B. Create an AWS Storage Gateway tape gateway. Congure tapes to use Amazon S3. Connect the application server to the tape gateway.
 - C. Create an Amazon EC2 Windows instance. Install and congure a Windows le share role on the instance. Connect the application server to the le share.
-- D. Create an Amazon FSx for Windows File Server le system. Attach the le system to the origin server. Connect the application server to the le system.
+- D. Create an Amazon FSx for Windows File Server file system. Attach the file system to the origin server. Connect the application server to the file system.
 
 ## Question #250
 
@@ -2919,14 +2919,14 @@ Which solution should a solutions architect recommend to meet these requirements
 
 A company's compliance team needs to move its le shares to AWS. The shares run on a Windows Server SMB le share. A self-managed onpremises Active Directory controls access to the files and folders.
 
-The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server le system.
+The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server file system.
 
 Which solution will meet these requirements?
 
 - A. Create an Active Directory Connector to connect to the Active Directory. Map the Active Directory groups to IAM groups to restrict access.
 - B. Assign a tag with a Restrict tag key and a Compliance tag value. Map the Active Directory groups to IAM groups to restrict access.
 - C. Create an IAM service-linked role that is linked directly to FSx for Windows File Server to restrict access.
-- D. Join the le system to the Active Directory to restrict access.
+- D. Join the file system to the Active Directory to restrict access.
 
 A company recently announced the deployment of its retail website to a global audience. The website runs on multiple Amazon EC2 instances behind an Elastic Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones.
 
@@ -3183,9 +3183,9 @@ Which solution will meet these requirements?
 ## Question #283
 
 
-A research company runs experiments that are powered by a simulation application and a visualization application. The simulation application runs on Linux and outputs intermediate data to an NFS share every 5 minutes. The visualization application is a Windows desktop application that displays the simulation output and requires an SMB le system.
+A research company runs experiments that are powered by a simulation application and a visualization application. The simulation application runs on Linux and outputs intermediate data to an NFS share every 5 minutes. The visualization application is a Windows desktop application that displays the simulation output and requires an SMB file system.
 
-The company maintains two synchronized le systems. This strategy is causing data duplication and inecient resource usage. The company needs to migrate the applications to AWS without making code changes to either application.
+The company maintains two synchronized file systems. This strategy is causing data duplication and inecient resource usage. The company needs to migrate the applications to AWS without making code changes to either application.
 
 Which solution will meet these requirements?
 
@@ -3247,7 +3247,7 @@ What should a solutions architect do to meet these requirements?
 
 - A. Create an Amazon S3 Standard bucket with access to the web servers.
 - B. Congure an Amazon CloudFront distribution with an Amazon S3 bucket as the origin.
-- C. Create an Amazon Elastic File System (Amazon EFS) le system. Mount the EFS le system on all web servers.
+- C. Create an Amazon Elastic File System (Amazon EFS) file system. Mount the EFS file system on all web servers.
 - D. Congure a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume to all web servers.
 
 ## Question #289
@@ -3372,10 +3372,10 @@ A research laboratory needs to process approximately 8 TB of data. The laborator
 
 Which solution will meet the performance requirements?
 
-- A. Create an Amazon FSx for NetApp ONTAP le system. Sat each volume' tiering policy to ALL. Import the raw data into the le system. Mount the la system on the EC2 instances.
-- B. Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre le system that uses persistent SSD storage. Select the option to import data from and export data to Amazon S3. Mount the le system on the EC2 instances.
-- C. Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre le system that uses persistent HDD storage. Select the option to import data from and export data to Amazon S3. Mount the le system on the EC2 instances.
-- D. Create an Amazon FSx for NetApp ONTAP le system. Set each volume's tiering policy to NONE. Import the raw data into the le system. Mount the le system on the EC2 instances.
+- A. Create an Amazon FSx for NetApp ONTAP file system. Sat each volume' tiering policy to ALL. Import the raw data into the file system. Mount the la system on the EC2 instances.
+- B. Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre file system that uses persistent SSD storage. Select the option to import data from and export data to Amazon S3. Mount the file system on the EC2 instances.
+- C. Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre file system that uses persistent HDD storage. Select the option to import data from and export data to Amazon S3. Mount the file system on the EC2 instances.
+- D. Create an Amazon FSx for NetApp ONTAP file system. Set each volume's tiering policy to NONE. Import the raw data into the file system. Mount the file system on the EC2 instances.
 
 ## Question #300
 
@@ -3427,7 +3427,7 @@ What should a solutions architect recommend?
 - C. Use Amazon EC2 Auto Scaling with simple scaling policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.
 - D. Use AWS Application Auto Scaling with target tracking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.
 
-A company recently created a disaster recovery site in a different AWS Region. The company needs to transfer large amounts of data back and forth between NFS le systems in the two Regions on a periodic basis.
+A company recently created a disaster recovery site in a different AWS Region. The company needs to transfer large amounts of data back and forth between NFS file systems in the two Regions on a periodic basis.
 
 Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -3443,9 +3443,9 @@ A company is designing a shared storage solution for a gaming application that i
 
 Which AWS solution meets these requirements?
 
-- A. Create an AWS DataSync task that shares the data as a mountable le system. Mount the le system to the application server.
+- A. Create an AWS DataSync task that shares the data as a mountable file system. Mount the file system to the application server.
 - B. Create an Amazon EC2 Windows instance. Install and congure a Windows le share role on the instance. Connect the application server to the le share.
-- C. Create an Amazon FSx for Windows File Server le system. Attach the le system to the origin server. Connect the application server to the le system.
+- C. Create an Amazon FSx for Windows File Server file system. Attach the file system to the origin server. Connect the application server to the file system.
 - D. Create an Amazon S3 bucket. Assign an IAM role to the application to grant access to the S3 bucket. Mount the S3 bucket to the application server.
 
 ## Question #306
@@ -3757,7 +3757,7 @@ The files are stored in an on-premises Windows le server. However, due to an inc
 Which solution will meet these requirements?
 
 - A. Migrate the le server to an Amazon EC2 instance in a public subnet. Congure the security group to limit inbound trac to the employees' IP addresses.
-- B. Migrate the files to an Amazon FSx for Windows File Server le system. Integrate the Amazon FSx le system with the on-premises Active Directory. Congure AWS Client VPN.
+- B. Migrate the files to an Amazon FSx for Windows File Server file system. Integrate the Amazon FSx file system with the on-premises Active Directory. Congure AWS Client VPN.
 - C. Migrate the files to Amazon S3, and create a private VPC endpoint. Create a signed URL to allow download.
 - D. Migrate the files to Amazon S3, and create a public VPC endpoint. Allow employees to sign on with AWS IAM Identity Center (AWS Single Sign-On).
 
@@ -3800,7 +3800,7 @@ What should a solutions architect do to meet this requirement with the LEAST ope
 
 - A. Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Congure a custom rotation period of 14 days.
 - B. Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.
-- C. Store a le that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) le system. Mount the EFS le system in all EC2 instances of the application tier. Restrict the access to the le on the le system so that the application can read the le and that only super users can modify the le. Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the le.
+- C. Store a le that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon Elastic File System (Amazon EFS) file system. Mount the EFS file system in all EC2 instances of the application tier. Restrict the access to the le on the file system so that the application can read the le and that only super users can modify the le. Implement an AWS Lambda function that rotates the key in Aurora every 14 days and writes new credentials into the le.
 - D. Store a le that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials. Download the le to the application regularly to ensure that the correct credentials are used. Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the le in the S3 bucket.
 
 ## Question #337
@@ -4627,10 +4627,10 @@ A company is implementing a shared storage solution for a gaming application tha
 
 Which solution meets these requirements?
 
-- A. Create an AWS DataSync task that shares the data as a mountable le system. Mount the le system to the application server.
+- A. Create an AWS DataSync task that shares the data as a mountable file system. Mount the file system to the application server.
 - B. Create an AWS Storage Gateway le gateway. Create a le share that uses the required client protocol. Connect the application server to the le share.
-- C. Create an Amazon Elastic File System (Amazon EFS) le system, and congure it to support Lustre. Attach the le system to the origin server. Connect the application server to the le system.
-- D. Create an Amazon FSx for Lustre le system. Attach the le system to the origin server. Connect the application server to the le system.
+- C. Create an Amazon Elastic File System (Amazon EFS) file system, and congure it to support Lustre. Attach the file system to the origin server. Connect the application server to the file system.
+- D. Create an Amazon FSx for Lustre file system. Attach the file system to the origin server. Connect the application server to the file system.
 
 A company runs an application that receives data from thousands of geographically dispersed remote devices that use UDP . The application processes the data immediately and sends a message back to the device if necessary. No data is stored.
 
@@ -5073,9 +5073,9 @@ After an audit from a regulator, the company has 90 days to move the data to the
 Which solution will meet these requirements?
 
 - A. Create an AWS DataSync agent in the corporate data center. Create a data transfer task Start the transfer to an Amazon S3 bucket.
-- B. Back up the data to AWS Snowball Edge Storage Optimized devices. Ship the devices to an AWS data center. Mount a target Amazon S3 bucket on the on-premises le system.
+- B. Back up the data to AWS Snowball Edge Storage Optimized devices. Ship the devices to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system.
 - C. Use rsync to copy the data directly from local storage to a designated Amazon S3 bucket over the Direct Connect connection.
-- D. Back up the data on tapes. Ship the tapes to an AWS data center. Mount a target Amazon S3 bucket on the on-premises le system.
+- D. Back up the data on tapes. Ship the tapes to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system.
 
 ## Question #446
 
@@ -5406,7 +5406,7 @@ Which solution will meet these requirements with the LEAST amount of administrat
 - C. Use AWS Transit Gateway to manage VPC communication in a single Region and Transit Gateway peering across Regions to manage VPC communications.
 - D. Use AWS PrivateLink across all Regions to connect VPCs across Regions and manage VPC communications
 
-A company is designing a containerized application that will use Amazon Elastic Container Service (Amazon ECS). The application needs to access a shared le system that is highly durable and can recover data to another AWS Region with a recovery point objective (RPO) of 8 hours. The le system needs to provide a mount target m each Availability Zone within a Region.
+A company is designing a containerized application that will use Amazon Elastic Container Service (Amazon ECS). The application needs to access a shared file system that is highly durable and can recover data to another AWS Region with a recovery point objective (RPO) of 8 hours. The file system needs to provide a mount target m each Availability Zone within a Region.
 
 A solutions architect wants to use AWS Backup to manage the replication to another Region.
 
@@ -5547,7 +5547,7 @@ A. Use Amazon S3 to host static content. Use Amazon Elastic Container Service (A
 - C. Use Amazon S3 to host static content. Use Amazon Elastic Kubernetes Service (Amazon EKS) with AWS Fargate for compute power. Use a managed Amazon RDS cluster for the database.
 - D. Use Amazon EC2 Reserved Instances to host static content. Use Amazon Elastic Kubernetes Service (Amazon EKS) with Amazon EC2 for compute power. Use a managed Amazon RDS cluster for the database.
 
-A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a le system be mountable by multiple Linux instances in AWS and on premises through native protocols, and have no minimum size requirements. The company has set up a Site-to-Site VPN for access from its on-premises network to its VPC.
+A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a file system be mountable by multiple Linux instances in AWS and on premises through native protocols, and have no minimum size requirements. The company has set up a Site-to-Site VPN for access from its on-premises network to its VPC.
 
 Which storage solution meets these requirements?
 
@@ -5664,7 +5664,7 @@ A company uses on-premises servers to host its applications. The company is runn
 
 Which combination of actions should a solutions architect take to meet these requirements? (Choose two.)
 
-- A. Mount Amazon S3 as a le system to the on-premises servers.
+- A. Mount Amazon S3 as a file system to the on-premises servers.
 - B. Deploy an AWS Storage Gateway le gateway to replace NFS storage.
 - C. Deploy AWS Snowball Edge to provision NFS mounts to on-premises servers.
 - D. Deploy an AWS Storage Gateway volume gateway to replace the block storage.
@@ -5707,15 +5707,15 @@ Which solution will meet these requirements?
 
 ## Question #500
 
-A company has multiple Windows le servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server le system. File permissions must be preserved to ensure that access rights do not change.
+A company has multiple Windows le servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permissions must be preserved to ensure that access rights do not change.
 
 Which solutions will meet these requirements? (Choose two.)
 
-- A. Deploy AWS DataSync agents on premises. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server le system.
-- B. Copy the shares on each le server into Amazon S3 buckets by using the AWS CLI. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server le system.
-- C. Remove the drives from each le server. Ship the drives to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server le system.
-- D. Order an AWS Snowcone device. Connect the device to the on-premises network. Launch AWS DataSync agents on the device. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server le system.
-- E. Order an AWS Snowball Edge Storage Optimized device. Connect the device to the on-premises network. Copy data to the device by using the AWS CLI. Ship the device back to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server le system.
+- A. Deploy AWS DataSync agents on premises. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+- B. Copy the shares on each le server into Amazon S3 buckets by using the AWS CLI. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+- C. Remove the drives from each le server. Ship the drives to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+- D. Order an AWS Snowcone device. Connect the device to the on-premises network. Launch AWS DataSync agents on the device. Schedule DataSync tasks to transfer the data to the FSx for Windows File Server file system.
+- E. Order an AWS Snowball Edge Storage Optimized device. Connect the device to the on-premises network. Copy data to the device by using the AWS CLI. Ship the device back to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
 
 ## Question #501
 
@@ -5737,7 +5737,7 @@ Which combination of actions should a solutions architect take to improve the pe
 
 - A. Move the website images into an Amazon S3 bucket that is mounted on every EC2 instance
 - B. Share the website images by using an NFS share from the primary EC2 instance. Mount this share on the other EC2 instances.
-- C. Move the website images onto an Amazon Elastic File System (Amazon EFS) le system that is mounted on every EC2 instance.
+- C. Move the website images onto an Amazon Elastic File System (Amazon EFS) file system that is mounted on every EC2 instance.
 - D. Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. Congure the Auto Scaling group to maintain a minimum of two instances. Congure an accelerator in AWS Global Accelerator for the website
 - E. Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. Congure the Auto Scaling group to maintain a minimum of two instances. Congure an Amazon CloudFront distribution for the website.
 
@@ -5784,7 +5784,7 @@ Which solution meets these requirements with the MOST scalability?
 - A. Upload files from the user's browser to the application servers. Transfer the files to an Amazon S3 bucket.
 - B. Provision an AWS Storage Gateway le gateway. Upload files directly from the user's browser to the le gateway.
 - C. Generate Amazon S3 presigned URLs in the application. Upload files directly from the user's browser into an S3 bucket.
-- D. Provision an Amazon Elastic File System (Amazon EFS) le system. Upload files directly from the user's browser to the le system.
+- D. Provision an Amazon Elastic File System (Amazon EFS) file system. Upload files directly from the user's browser to the file system.
 
 ## Question #507
 
@@ -6272,8 +6272,8 @@ A recent analysis of a company's IT expenses highlights the need to reduce backu
 What should a solutions architect recommend?
 
 - A. Set up AWS Storage Gateway to connect with the backup applications using the NFS interface.
-- B. Set up an Amazon EFS le system that connects with the backup applications using the NFS interface.
-- C. Set up an Amazon EFS le system that connects with the backup applications using the iSCSI interface.
+- B. Set up an Amazon EFS file system that connects with the backup applications using the NFS interface.
+- C. Set up an Amazon EFS file system that connects with the backup applications using the iSCSI interface.
 - D. Set up AWS Storage Gateway to connect with the backup applications using the iSCSI-virtual tape library (VTL) interface.
 
 ## Question #547
@@ -6510,9 +6510,9 @@ A company runs multiple Amazon EC2 Linux instances in a VPC across two Availabil
 What should a solutions architect do to meet these requirements?
 
 - A. Create an Amazon S3 bucket. Allow access from all the EC2 instances in the VPC.
-- B. Create an Amazon Elastic File System (Amazon EFS) le system. Mount the EFS le system from each EC2 instance.
-- C. Create a le system on a Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volume. Attach the EBS volume to all the EC2 instances.
-- D. Create le systems on Amazon Elastic Block Store (Amazon EBS) volumes that are attached to each EC2 instance. Synchronize the EBS volumes across the different EC2 instances.
+- B. Create an Amazon Elastic File System (Amazon EFS) file system. Mount the EFS file system from each EC2 instance.
+- C. Create a file system on a Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volume. Attach the EBS volume to all the EC2 instances.
+- D. Create file systems on Amazon Elastic Block Store (Amazon EBS) volumes that are attached to each EC2 instance. Synchronize the EBS volumes across the different EC2 instances.
 
 ## Question #567
 
@@ -6524,7 +6524,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - A. Use Amazon API Gateway with AWS Lambda functions to receive the data from the sensors, process the data, and store the data in an Amazon DynamoDB table.
 - B. Use an Elastic Load Balancer that is supported by an Auto Scaling group of Amazon EC2 instances to receive and process the data from the sensors. Use an Amazon S3 bucket to store the processed data.
 - C. Use Amazon API Gateway with AWS Lambda functions to receive the data from the sensors, process the data, and store the data in a Microsoft SQL Server Express database on an Amazon EC2 instance.
-- D. Use an Elastic Load Balancer that is supported by an Auto Scaling group of Amazon EC2 instances to receive and process the data from the sensors. Use an Amazon Elastic File System (Amazon EFS) shared le system to store the processed data.
+- D. Use an Elastic Load Balancer that is supported by an Auto Scaling group of Amazon EC2 instances to receive and process the data from the sensors. Use an Amazon Elastic File System (Amazon EFS) shared file system to store the processed data.
 
 ## Question #568
 
@@ -6672,9 +6672,9 @@ A company uses locally attached storage to run a latency-sensitive application o
 
 Which solution will meet these requirements MOST cost-effectively?
 
-- A. Congure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for Lustre le system to run the application.
+- A. Congure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for Lustre file system to run the application.
 - B. Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP2 volume to run the application.
-- C. Congure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for OpenZFS le system to run the application.
+- C. Congure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for OpenZFS file system to run the application.
 - D. Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP3 volume to run the application.
 
 A company runs a stateful production application on Amazon EC2 instances. The application requires at least two EC2 instances to always be running.
@@ -6749,10 +6749,10 @@ A company is designing a solution to capture customer activity in different web 
 
 Which solution will meet these requirements?
 
-- A. Congure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in an Amazon Elastic File System (Amazon EFS) le system. Authorization is resolved at the GWLB.
+- A. Congure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives in an Amazon Elastic File System (Amazon EFS) file system. Authorization is resolved at the GWLB.
 - B. Congure an Amazon API Gateway endpoint in front of an Amazon Kinesis data stream that stores the information that the company receives in an Amazon S3 bucket. Use an AWS Lambda function to resolve authorization.
 - C. Congure an Amazon API Gateway endpoint in front of an Amazon Kinesis Data Firehose that stores the information that the company receives in an Amazon S3 bucket. Use an API Gateway Lambda authorizer to resolve authorization.
-- D. Congure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on an Amazon Elastic File System (Amazon EFS) le system. Use an AWS Lambda function to resolve authorization.
+- D. Congure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on an Amazon Elastic File System (Amazon EFS) file system. Use an AWS Lambda function to resolve authorization.
 
 ## Question #588
 
@@ -7094,12 +7094,12 @@ Which solution will meet these requirements?
 - C. Congure Amazon GuardDuty to monitor and report ndings to AWS Security Hub.
 - D. Congure AWS Cong to monitor and report ndings to Amazon EventBridge.
 
-A company wants to migrate an on-premises data center to AWS. The data center hosts a storage server that stores data in an NFS-based le system. The storage server holds 200 GB of data. The company needs to migrate the data without interruption to existing services. Multiple resources in AWS must be able to access the data by using the NFS protocol.
+A company wants to migrate an on-premises data center to AWS. The data center hosts a storage server that stores data in an NFS-based file system. The storage server holds 200 GB of data. The company needs to migrate the data without interruption to existing services. Multiple resources in AWS must be able to access the data by using the NFS protocol.
 
 Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)
 
-- A. Create an Amazon FSx for Lustre le system.
-- B. Create an Amazon Elastic File System (Amazon EFS) le system.
+- A. Create an Amazon FSx for Lustre file system.
+- B. Create an Amazon Elastic File System (Amazon EFS) file system.
 - C. Create an Amazon S3 bucket to receive the data.
 - D. Manually use an operating system copy command to push the data into the AWS destination.
 - E. Install an AWS DataSync agent in the on-premises data center. Use a DataSync task between the on-premises location and AWS.
@@ -7107,14 +7107,14 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 ## Question #618
 
 
-A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB le share mounted as a volume in the us-east-1 Region. The company has a recovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service disruptions. The company needs to replicate the le system to the us-west-2 Region. The replicated data must not be deleted by any user for 5 years.
+A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB le share mounted as a volume in the us-east-1 Region. The company has a recovery point objective (RPO) of 5 minutes for planned system maintenance or unplanned service disruptions. The company needs to replicate the file system to the us-west-2 Region. The replicated data must not be deleted by any user for 5 years.
 
 Which solution will meet these requirements?
 
-- A. Create an FSx for Windows File Server le system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
-- B. Create an FSx for Windows File Server le system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
-- C. Create an FSx for Windows File Server le system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
-- D. Create an FSx for Windows File Server le system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
+- A. Create an FSx for Windows File Server file system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
+- B. Create an FSx for Windows File Server file system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
+- C. Create an FSx for Windows File Server file system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
+- D. Create an FSx for Windows File Server file system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Congure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Congure a minimum duration of 5 years.
 
 ## Question #619
 
@@ -7276,7 +7276,7 @@ Which storage solution should a solutions architect recommend to meet these requ
 
 - A. Store the data in Amazon S3 Glacier. Update the S3 Glacier vault policy to allow access to the application instances.
 - B. Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume on the application instances.
-- C. Store the data in an Amazon Elastic File System (Amazon EFS) le system. Mount the le system on the application instances.
+- C. Store the data in an Amazon Elastic File System (Amazon EFS) file system. Mount the file system on the application instances.
 - D. Store the data in an Amazon Elastic Block Store (Amazon EBS) Provisioned IOPS volume shared between the application instances.
 
 ## Question #633
@@ -7326,6 +7326,8 @@ What should a solutions architect do to process the events from Amazon S3 in a s
 - B. Create an SNS subscription that processes the event in Amazon Elastic Kubernetes Service (Amazon EKS) before the event runs in Lambda
 - C. Create an SNS subscription that sends the event to Amazon Simple Queue Service (Amazon SQS). Congure the SOS queue to trigger a Lambda function.
 - D. Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). Congure the Lambda function to poll from the SMS event.
+
+## Question #637
 
 A solutions architect is designing a new service behind Amazon API Gateway. The request patterns for the service will be unpredictable and can change suddenly from 0 requests to over 500 per second. The total size of the data that needs to be persisted in a backend database is currently less than 1 GB with unpredictable future growth. Data can be queried using simple key-value requests.
 
@@ -7438,13 +7440,13 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 ## Question #646
 
-A solutions architect needs to host a high performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of Amazon EC2 instances and will require parallel access to a shared le system to enable distributed processing of large datasets. Datasets will be accessed across multiple instances simultaneously. The workload requires access latency within 1 ms. After processing has completed, engineers will need access to the dataset for manual postprocessing.
+A solutions architect needs to host a high performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of Amazon EC2 instances and will require parallel access to a shared file system to enable distributed processing of large datasets. Datasets will be accessed across multiple instances simultaneously. The workload requires access latency within 1 ms. After processing has completed, engineers will need access to the dataset for manual postprocessing.
 
 Which solution will meet these requirements?
 
-- A. Use Amazon Elastic File System (Amazon EFS) as a shared le system. Access the dataset from Amazon EFS.
-- B. Mount an Amazon S3 bucket to serve as the shared le system. Perform postprocessing directly from the S3 bucket.
-- C. Use Amazon FSx for Lustre as a shared le system. Link the le system to an Amazon S3 bucket for postprocessing.
+- A. Use Amazon Elastic File System (Amazon EFS) as a shared file system. Access the dataset from Amazon EFS.
+- B. Mount an Amazon S3 bucket to serve as the shared file system. Perform postprocessing directly from the S3 bucket.
+- C. Use Amazon FSx for Lustre as a shared file system. Link the file system to an Amazon S3 bucket for postprocessing.
 - D. Congure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing.
 
 ## Question #647
@@ -7468,8 +7470,8 @@ A solutions architect must identify a highly available cloud storage solution th
 
 What should the solutions architect do to meet these requirements?
 
-- A. Use Amazon FSx for Lustre scratch le systems.
-- B. Use Amazon FSx for Lustre persistent le systems.
+- A. Use Amazon FSx for Lustre scratch file systems.
+- B. Use Amazon FSx for Lustre persistent file systems.
 - C. Use Amazon Elastic File System (Amazon EFS) with Bursting Throughput mode.
 - D. Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode.
 
@@ -7587,15 +7589,15 @@ Which solution will meet these requirements MOST cost-effectively?
 ## Question #658
 
 
-A company uses an on-premises network-attached storage (NAS) system to provide le shares to its high performance computing (HPC) workloads. The company wants to migrate its latency-sensitive HPC workloads and its storage to the AWS Cloud. The company must be able to provide NFS and SMB multi-protocol access from the le system.
+A company uses an on-premises network-attached storage (NAS) system to provide file shares to its high performance computing (HPC) workloads. The company wants to migrate its latency-sensitive HPC workloads and its storage to the AWS Cloud. The company must be able to provide NFS and SMB multi-protocol access from the file system.
 
 Which solution will meet these requirements with the LEAST latency? (Choose two.)
 
 - A. Deploy compute optimized EC2 instances into a cluster placement group.
 - B. Deploy compute optimized EC2 instances into a partition placement group.
-- C. Attach the EC2 instances to an Amazon FSx for Lustre le system.
-- D. Attach the EC2 instances to an Amazon FSx for OpenZFS le system.
-- E. Attach the EC2 instances to an Amazon FSx for NetApp ONTAP le system.
+- C. Attach the EC2 instances to an Amazon FSx for Lustre file system.
+- D. Attach the EC2 instances to an Amazon FSx for OpenZFS file system.
+- E. Attach the EC2 instances to an Amazon FSx for NetApp ONTAP file system.
 
 ## Question #659
 
@@ -7856,14 +7858,14 @@ Which combination of steps will meet these requirements? (Choose three.)
 ## Question #680
 
 
-A solutions architect needs to copy files from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) le system and another S3 bucket. The files must be copied continuously. New files are added to the original S3 bucket consistently. The copied files should be overwritten only if the source le changes.
+A solutions architect needs to copy files from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) file system and another S3 bucket. The files must be copied continuously. New files are added to the original S3 bucket consistently. The copied files should be overwritten only if the source le changes.
 
 Which solution will meet these requirements with the LEAST operational overhead?
 
-- A. Create an AWS DataSync location for both the destination S3 bucket and the EFS le system. Create a task for the destination S3 bucket and the EFS le system. Set the transfer mode to transfer only data that has changed.
-- B. Create an AWS Lambda function. Mount the le system to the function. Set up an S3 event notication to invoke the function when files are created and changed in Amazon S3. Congure the function to copy files to the le system and the destination S3 bucket.
-- C. Create an AWS DataSync location for both the destination S3 bucket and the EFS le system. Create a task for the destination S3 bucket and the EFS le system. Set the transfer mode to transfer all data.
-- D. Launch an Amazon EC2 instance in the same VPC as the le system. Mount the le system. Create a script to routinely synchronize all objects that changed in the origin S3 bucket to the destination S3 bucket and the mounted le system.
+- A. Create an AWS DataSync location for both the destination S3 bucket and the EFS file system. Create a task for the destination S3 bucket and the EFS file system. Set the transfer mode to transfer only data that has changed.
+- B. Create an AWS Lambda function. Mount the file system to the function. Set up an S3 event notication to invoke the function when files are created and changed in Amazon S3. Congure the function to copy files to the file system and the destination S3 bucket.
+- C. Create an AWS DataSync location for both the destination S3 bucket and the EFS file system. Create a task for the destination S3 bucket and the EFS file system. Set the transfer mode to transfer all data.
+- D. Launch an Amazon EC2 instance in the same VPC as the file system. Mount the file system. Create a script to routinely synchronize all objects that changed in the origin S3 bucket to the destination S3 bucket and the mounted file system.
 
 ## Question #681
 
