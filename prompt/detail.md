@@ -1,4 +1,4 @@
-$SERVICE = AWS Storage Gateway
+$SERVICE = DMS
 
 Act as an AWS Solutions Architect & AWS Trainer.
 

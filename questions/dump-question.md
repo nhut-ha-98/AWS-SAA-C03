@@ -6736,14 +6736,14 @@ Which solution will meet these requirements?
 
 
 
-A company has ve organizational units (OUs) as part of its organization in AWS Organizations. Each OU correlates to the ve businesses that the company owns. The company's research and development (R&amp;D) business is separating from the company and will need its own organization. A solutions architect creates a separate new management account for this purpose.
+A company has ve organizational units (OUs) as part of its organization in AWS Organizations. Each OU correlates to the ve businesses that the company owns. The company's research and development (R&D) business is separating from the company and will need its own organization. A solutions architect creates a separate new management account for this purpose.
 
 What should the solutions architect do next in the new management account?
 
-- A. Have the R&amp;D AWS account be part of both organizations during the transition.
-- B. Invite the R&amp;D AWS account to be part of the new organization after the R&amp;D AWS account has left the prior organization.
-- C. Create a new R&amp;D AWS account in the new organization. Migrate resources from the prior R&amp;D AWS account to the new R&amp;D AWS account.
-- D. Have the R&amp;D AWS account join the new organization. Make the new management account a member of the prior organization.
+- A. Have the R&D AWS account be part of both organizations during the transition.
+- B. Invite the R&D AWS account to be part of the new organization after the R&D AWS account has left the prior organization.
+- C. Create a new R&D AWS account in the new organization. Migrate resources from the prior R&D AWS account to the new R&D AWS account.
+- D. Have the R&D AWS account join the new organization. Make the new management account a member of the prior organization.
 
 A company is designing a solution to capture customer activity in different web applications to process analytics and make predictions. Customer activity in the web applications is unpredictable and can increase suddenly. The company requires a solution that integrates with other web applications. The solution must include an authorization step for security purposes.
 
@@ -6778,6 +6778,9 @@ Which solution will meet these requirements?
 - C. Use an AWS Storage Gateway cached volume to store session data. Update the application to use AWS Storage Gateway cached volume to store the session state.
 - D. Use Amazon RDS to store the session state. Update the application to use Amazon RDS to store the session state.
 
+## Question #590
+
+
 A company migrated a MySQL database from the company's on-premises data center to an Amazon RDS for MySQL DB instance. The company sized the RDS DB instance to meet the company's average daily workload. Once a month, the database performs slowly when the company runs queries for a report. The company wants to have the ability to run reports and maintain the performance of the daily workloads.
 
 Which solution will meet these requirements?
@@ -6811,6 +6814,8 @@ Which solution will meet these requirements?
 - C. Use Amazon EC2 instances that are behind Application Load Balancers (ALBs) to store the images. Deploy the instances only in the countries the company services. Provide customers with links to the ALBs for their specic country's instances.
 - D. Use Amazon S3 to store the images. Use Amazon CloudFront to distribute the images with geographic restrictions. Provide a signed URL for each customer to access the data in CloudFront.
 
+## Question #593
+
 A solutions architect is designing a highly available Amazon ElastiCache for Redis based solution. The solutions architect needs to ensure that failures do not result in performance degradation or loss of data locally and within an AWS Region. The solution needs to provide high availability at the node level and at the Region level.
 
 Which solution will meet these requirements?
@@ -6842,6 +6847,8 @@ Which solution will meet these requirements MOST cost-effectively?
 - B. Use predictive scaling to change the size of the Auto Scaling group.
 - C. Use dynamic scaling to change the size of the Auto Scaling group.
 - D. Use schedule scaling to change the size of the Auto Scaling group.
+
+## Question #596
 
 
 An ecommerce application uses a PostgreSQL database that runs on an Amazon EC2 instance. During a monthly sales event, database usage increases and causes database connection issues for the application. The trac is unpredictable for subsequent monthly sales events, which impacts the sales forecast. The company needs to maintain performance when there is an unpredictable increase in trac.
@@ -6879,6 +6886,9 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - E. Set up an Amazon Redshift cluster to query the data that is in Amazon S3. Provide access to analysts.
 - F. Setup Amazon Athena to query the data that is in Amazon S3. Provide access to analysts.
 
+# Question #599
+
+
 A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters and Amazon RDS DB instances to build and run a payment processing application. The company will run the application in its on-premises data center for compliance purposes.
 
 A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company's operational team to build the application.
@@ -6915,6 +6925,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use data import from Amazon S3 to migrate the database to an Aurora PostgreSQL DB cluster.
 - D. Use the pg\_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster.
 
+## Question #602
 
 A company's infrastructure consists of hundreds of Amazon EC2 instances that use Amazon Elastic Block Store (Amazon EBS) storage. A solutions architect must ensure that every EC2 instance can be recovered after a disaster.
 
