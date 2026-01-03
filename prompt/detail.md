@@ -1,4 +1,4 @@
-$SERVICE = KMS
+$SERVICE = DMS
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
@@ -12,7 +12,6 @@ Designed for THREE reading stages:
 Focus on understanding, coverage, and long-term memorization.
 Do NOT go too deep into low-level technical details.
 
-==============================
 ⚡ STAGE 1 — ULTRA-FAST READ (30–60s)
 ==============================
 🧠 MEMORY ANCHORS (VERY IMPORTANT)
@@ -22,7 +21,6 @@ Do NOT go too deep into low-level technical details.
   - < 7 must-remember keywords (English only, ideal: 3)
 - Use emojis to create strong visual memory hooks 🧠✨
 
-==============================
 📝 STAGE 2 — PRE-EXAM READ
 ==============================
 
@@ -50,7 +48,6 @@ Do NOT go too deep into low-level technical details.
 - What $SERVICE is NOT used for
 - 🧠 Keywords: Exam tip, Anti-pattern
 
-==============================
 📚 STAGE 3 — FULL UNDERSTANDING
 ==============================
 
@@ -75,7 +72,23 @@ Do NOT go too deep into low-level technical details.
 - Short comparison bullets (no deep dive)
 - 🧠 Keywords: Choose when, Compare
 
-==============================
+❓Q&A (TÙY CHỌN)
+- 3–7 câu hỏi & đáp án ngắn, tập trung vào các bẫy thường gặp trong exam
+- Ưu tiên dạng "tình huống ngắn" (scenario) kèm key reasoning 1–2 dòng
+- Mục tiêu: củng cố lại keyword quan trọng và phân biệt với dịch vụ dễ nhầm lẫn
+
+🏭 MÔ HÌNH / KIẾN TRÚC PHỔ BIẾN
+- 2–5 architecture pattern đơn giản, dùng emoji + keyword để dễ nhớ
+- Mô tả cực ngắn: bối cảnh ➝ dịch vụ chính ➝ flow tổng quan
+- Tập trung vào pattern hay xuất hiện trong đề thi hoặc thực tế (best practice)
+
+GENERAL RULES
+- Write explanations in VIETNAMESE.
+- KEEP ALL AWS KEYWORDS, SERVICE NAMES, AND OFFICIAL TERMS IN ENGLISH.
+- Do NOT translate AWS service names or technical keywords.
+- Easy to understand for beginners.
+- Keep content SHORT, CLEAR, and SCANNABLE.
+
 📝 STYLE RULES
 ==============================
 - Use emojis naturally (not spammy)
@@ -86,6 +99,26 @@ Do NOT go too deep into low-level technical details.
 
 📌 OUTPUT RULES
 ==============================
-- Vietnamese explanation
-- English keywords ONLY for technical terms
-- Put the final answer into CANVAS for easy copy
+Put the entire output into CANVAS for easy copy & reuse
+
+The biggest title must use H1 + bold
+
+Stage headings must strictly follow this format:
+
+⚡ STAGE X — TITLE
+==============================
+
+Do NOT quote or repeat meta notes such as: (super short), (3 bullets), etc.
+
+🎯 FINAL GOAL
+
+Stage 1: Ultra-fast recall in seconds
+
+Stage 2: High-confidence AWS exam revision
+
+Stage 3: Provide full coverage by enumerating all functions and configurations, using concise explanations only, to build clear conceptual understanding and correct service selection
+
+IMPORTANT
+- Do NOT skip any bullet.
+- Do NOT go too deep into low-level implementation.
+- Focus on exam understanding, service selection, and long-term memorization.
