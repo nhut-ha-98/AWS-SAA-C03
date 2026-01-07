@@ -136,8 +136,8 @@ What should a solutions architect do to accomplish this goal?
 
 A global company hosts its web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The web application has static data and dynamic data. The company stores its static data in an Amazon S3 bucket. The company wants to improve performance and reduce latency for the static data and dynamic data. The company is using its own domain name registered with Amazon Route 53. What should a solutions architect do to meet these requirements?
 
-- A. Create an Amazon CloudFront distribution that has the S3 bucket and the ALB as origins. Configure Route 53 to route trac to the CloudFront distribution.
-- B. Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint Configure Route 53 to route trac to the CloudFront distribution.
+- A. Create an Amazon CloudFront distribution that has the S3 bucket and the ALB as origins. Configure Route 53 to route traffic to the CloudFront distribution.
+- B. Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint Configure Route 53 to route traffic to the CloudFront distribution.
 - C. Create an Amazon CloudFront distribution that has the S3 bucket as an origin. Create an AWS Global Accelerator standard accelerator that has the ALB and the CloudFront distribution as endpoints. Create a custom domain name that points to the accelerator DNS name. Use the custom domain name as an endpoint for the web application.
 - D. Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application.
 
@@ -169,12 +169,12 @@ Which solution will meet these requirements?
 ## Question #15
 
 
-A company recently migrated to AWS and wants to implement a solution to protect the trac that ows in and out of the production VPC. The company had an inspection server in its on-premises data center. The inspection server performed specic operations such as trac ow inspection and trac ltering. The company wants to have the same functionalities in the AWS Cloud. Which solution will meet these requirements?
+A company recently migrated to AWS and wants to implement a solution to protect the traffic that ows in and out of the production VPC. The company had an inspection server in its on-premises data center. The inspection server performed specic operations such as traffic ow inspection and traffic ltering. The company wants to have the same functionalities in the AWS Cloud. Which solution will meet these requirements?
 
-- A. Use Amazon GuardDuty for trac inspection and trac ltering in the production VPC.
-- B. Use Trac Mirroring to mirror trac from the production VPC for trac inspection and ltering.
-- C. Use AWS Network Firewall to create the required rules for trac inspection and trac ltering for the production VPC.
-- D. Use AWS Firewall Manager to create the required rules for trac inspection and trac ltering for the production VPC.
+- A. Use Amazon GuardDuty for traffic inspection and traffic ltering in the production VPC.
+- B. Use Trac Mirroring to mirror traffic from the production VPC for traffic inspection and ltering.
+- C. Use AWS Network Firewall to create the required rules for traffic inspection and traffic ltering for the production VPC.
+- D. Use AWS Firewall Manager to create the required rules for traffic inspection and traffic ltering for the production VPC.
 
 ## Question #16
 
@@ -212,12 +212,12 @@ A solutions architect needs to design a solution that uses durable, stateless co
 
 A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual rewall appliance from AWS Marketplace in an inspection VPC. The appliance is congfiured with an IP interface that can accept IP packets.
 
-A solutions architect needs to integrate the web application with the appliance to inspect all trac to the application before the trac reaches the web server.
+A solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server.
 
 Which solution will meet these requirements with the LEAST operational overhead?
 
-- A. Create a Network Load Balancer in the public subnet of the application's VPC to route the trac to the appliance for packet inspection.
-- B. Create an Application Load Balancer in the public subnet of the application's VPC to route the trac to the appliance for packet inspection.
+- A. Create a Network Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.
+- B. Create an Application Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.
 - C. Deploy a transit gateway in the inspection VPConfigure route tables to route the incoming packets through the transit gateway.
 - D. Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance.
 
@@ -241,8 +241,8 @@ An ecommerce company wants to launch a one-deal-a-day website on AWS. Each day w
 Which solution will meet these requirements with the LEAST operational overhead?
 
 - A. Use Amazon S3 to host the full website in different S3 buckets. Add Amazon CloudFront distributions. Set the S3 buckets as origins for the distributions. Store the order data in Amazon S3.
-- B. Deploy the full website on Amazon EC2 instances that run in Auto Scaling groups across multiple Availability Zones. Add an Application Load Balancer (ALB) to distribute the website trac. Add another ALB for the backend APIs. Store the data in Amazon RDS for MySQL.
-- C. Migrate the full application to run in containers. Host the containers on Amazon Elastic Kubernetes Service (Amazon EKS). Use the Kubernetes Cluster Autoscaler to increase and decrease the number of pods to process bursts in trac. Store the data in Amazon RDS for MySQL.
+- B. Deploy the full website on Amazon EC2 instances that run in Auto Scaling groups across multiple Availability Zones. Add an Application Load Balancer (ALB) to distribute the website traffic. Add another ALB for the backend APIs. Store the data in Amazon RDS for MySQL.
+- C. Migrate the full application to run in containers. Host the containers on Amazon Elastic Kubernetes Service (Amazon EKS). Use the Kubernetes Cluster Autoscaler to increase and decrease the number of pods to process bursts in traffic. Store the data in Amazon RDS for MySQL.
 - D. Use an Amazon S3 bucket to host the website's static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB.
 
 ## Question #22
@@ -475,8 +475,8 @@ A company runs a highly available image-processing application on Amazon EC2 ins
 
 A company has an on-premises application that generates a large amount of time-sensitive data that is backed up to Amazon S3. The application has grown and there are user complaints about internet bandwidth limitations. A solutions architect needs to design a long-term solution that allows for both timely backups to Amazon S3 and with minimal impact on internet connectivity for internal users. Which solution meets these requirements?
 
-- A. Establish AWS VPN connections and proxy all trac through a VPC gateway endpoint.
-- B. Establish a new AWS Direct Connect connection and direct backup trac through this new connection.
+- A. Establish AWS VPN connections and proxy all traffic through a VPC gateway endpoint.
+- B. Establish a new AWS Direct Connect connection and direct backup traffic through this new connection.
 - C. Order daily AWS Snowball devices. Load the data onto the Snowball devices and return the devices to AWS each day.
 - D. Submit a support ticket through the AWS Management Console. Request the removal of S3 service limits from the account.
 
@@ -608,8 +608,8 @@ A solutions architect is developing a VPC architecture that includes multiple su
 Which solution will meet these requirements?
 
 - A. Create a new route table that excludes the route to the public subnets' CIDR blocks. Associate the route table with the database subnets.
-- B. Create a security group that denies inbound trac from the security group that is assigned to instances in the public subnets. Attach the security group to the DB instances.
-- C. Create a security group that allows inbound trac from the security group that is assigned to instances in the private subnets. Attach the security group to the DB instances.
+- B. Create a security group that denies inbound traffic from the security group that is assigned to instances in the public subnets. Attach the security group to the DB instances.
+- C. Create a security group that allows inbound traffic from the security group that is assigned to instances in the private subnets. Attach the security group to the DB instances.
 - D. Create a new peering connection between the public subnets and the private subnets. Create a different peering connection between the private subnets and the database subnets.
 
 ## Question #56
@@ -619,7 +619,7 @@ A company has registered its domain name with Amazon Route 53. The company uses 
 
 - A. Create stage variables in API Gateway with Name="Endpoint-URL" and Value="Company Domain Name" to overwrite the default URL. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM).
 - B. Create Route 53 DNS records with the company's domain name. Point the alias record to the Regional API Gateway stage endpoint. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region.
-- C. Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the same Region. Attach the certicate to the API Gateway endpoint. Configure Route 53 to route trac to the API Gateway endpoint.
+- C. Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the same Region. Attach the certicate to the API Gateway endpoint. Configure Route 53 to route traffic to the API Gateway endpoint.
 - D. Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region. Attach the certicate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name.
 
 A company is running a popular social media website. The website gives users the ability to upload images to share with other users. The company wants to make sure that the images do not contain inappropriate content. The company needs a solution that minimizes development effort.
@@ -659,9 +659,9 @@ A company has a website hosted on AWS. The website is behind an Application Load
 
 What should a solutions architect do to meet this requirement?
 
-- A. Update the ALB's network ACL to accept only HTTPS trac.
+- A. Update the ALB's network ACL to accept only HTTPS traffic.
 - B. Create a rule that replaces the HTTP in the URL with HTTPS.
-- C. Create a listener rule on the ALB to redirect HTTP trac to HTTPS.
+- C. Create a listener rule on the ALB to redirect HTTP traffic to HTTPS.
 - D. Replace the ALB with a Network Load Balancer congfiured to use Server Name Indication (SNI).
 
 ## Question #61
@@ -744,7 +744,7 @@ What should a solutions architect do to ensure messages are being processed once
 ## Question #68
 
 
-A solutions architect is designing a new hybrid architecture to extend a company's on-premises infrastructure to AWS. The company requires a highly available connection with consistent low latency to an AWS Region. The company needs to minimize costs and is willing to accept slower trac if the primary connection fails.
+A solutions architect is designing a new hybrid architecture to extend a company's on-premises infrastructure to AWS. The company requires a highly available connection with consistent low latency to an AWS Region. The company needs to minimize costs and is willing to accept slower traffic if the primary connection fails.
 
 What should the solutions architect do to meet these requirements?
 
@@ -757,7 +757,7 @@ A company is running a business-critical web application on Amazon EC2 instances
 
 Which solution will meet these requirements with the LEAST operational effort?
 
-- A. Place the EC2 instances in different AWS Regions. Use Amazon Route 53 health checks to redirect trac. Use Aurora PostgreSQL CrossRegion Replication.
+- A. Place the EC2 instances in different AWS Regions. Use Amazon Route 53 health checks to redirect traffic. Use Aurora PostgreSQL CrossRegion Replication.
 - B. Configure the Auto Scaling group to use multiple Availability Zones. Configure the database as Multi-AZ. Configure an Amazon RDS Proxy instance for the database.
 - C. Configure the Auto Scaling group to use one Availability Zone. Generate hourly snapshots of the database. Recover the database from the snapshots in the event of a failure.
 - D. Configure the Auto Scaling group to use multiple AWS Regions. Write the data from the application to Amazon S3. Use S3 Event Notications to launch an AWS Lambda function to write the data to the database.
@@ -813,11 +813,11 @@ A solutions architect is designing a two-tier web application. The application c
 
 How should security groups be congfiured in this situation? (Choose two.)
 
-- A. Configure the security group for the web tier to allow inbound trac on port 443 from 0.0.0.0/0.
-- B. Configure the security group for the web tier to allow outbound trac on port 443 from 0.0.0.0/0.
-- C. Configure the security group for the database tier to allow inbound trac on port 1433 from the security group for the web tier.
-- D. Configure the security group for the database tier to allow outbound trac on ports 443 and 1433 to the security group for the web tier.
-- E. Configure the security group for the database tier to allow inbound trac on ports 443 and 1433 from the security group for the web tier.
+- A. Configure the security group for the web tier to allow inbound traffic on port 443 from 0.0.0.0/0.
+- B. Configure the security group for the web tier to allow outbound traffic on port 443 from 0.0.0.0/0.
+- C. Configure the security group for the database tier to allow inbound traffic on port 1433 from the security group for the web tier.
+- D. Configure the security group for the database tier to allow outbound traffic on ports 443 and 1433 to the security group for the web tier.
+- E. Configure the security group for the database tier to allow inbound traffic on ports 443 and 1433 from the security group for the web tier.
 
 A company wants to move a multi-tiered application from on premises to the AWS Cloud to improve the application's performance. The application consists of application tiers that communicate with each other by way of RESTful services. Transactions are dropped when one tier becomes overloaded. A solutions architect must design a solution that resolves these issues and modernizes the application.
 
@@ -865,7 +865,7 @@ What is the MOST operationally ecient solution that meets these requirements?
 ## Question #79
 
 
-A company is planning to use an Amazon DynamoDB table for data storage. The company is concerned about cost optimization. The table will not be used on most mornings. In the evenings, the read and write trac will often be unpredictable. When trac spikes occur, they will happen very quickly.
+A company is planning to use an Amazon DynamoDB table for data storage. The company is concerned about cost optimization. The table will not be used on most mornings. In the evenings, the read and write traffic will often be unpredictable. When traffic spikes occur, they will happen very quickly.
 
 What should a solutions architect recommend?
 
@@ -998,7 +998,7 @@ Which solution will meet this requirement with the LEAST operational overhead?
 ## Question #91
 
 
-A company has applications that run on Amazon EC2 instances in a VPC. One of the applications needs to call the Amazon S3 API to store and read objects. According to the company's security regulations, no trac from the applications is allowed to travel across the internet.
+A company has applications that run on Amazon EC2 instances in a VPC. One of the applications needs to call the Amazon S3 API to store and read objects. According to the company's security regulations, no traffic from the applications is allowed to travel across the internet.
 
 Which solution will meet these requirements?
 
@@ -1048,7 +1048,7 @@ Which solution meets these requirements with the LEAST operational overhead?
 ## Question #95
 
 
-An application allows users at a company's headquarters to access product data. The product data is stored in an Amazon RDS MySQL DB instance. The operations team has isolated an application performance slowdown and wants to separate read trac from write trac. A solutions architect needs to optimize the application's performance quickly.
+An application allows users at a company's headquarters to access product data. The product data is stored in an Amazon RDS MySQL DB instance. The operations team has isolated an application performance slowdown and wants to separate read traffic from write traffic. A solutions architect needs to optimize the application's performance quickly.
 
 What should the solutions architect recommend?
 
@@ -1112,10 +1112,10 @@ A solutions architect is designing a VPC with public and private subnets. The VP
 
 What should the solutions architect do to enable Internet access for the private subnets?
 
-- A. Create three NAT gateways, one for each public subnet in each AZ. Create a private route table for each AZ that forwards non-VPC trac to the NAT gateway in its AZ.
-- B. Create three NAT instances, one for each private subnet in each AZ. Create a private route table for each AZ that forwards non-VPC trac to the NAT instance in its AZ.
-- C. Create a second internet gateway on one of the private subnets. Update the route table for the private subnets that forward non-VPC trac to the private internet gateway.
-- D. Create an egress-only internet gateway on one of the public subnets. Update the route table for the private subnets that forward non-VPC trac to the egress-only Internet gateway.
+- A. Create three NAT gateways, one for each public subnet in each AZ. Create a private route table for each AZ that forwards non-VPC traffic to the NAT gateway in its AZ.
+- B. Create three NAT instances, one for each private subnet in each AZ. Create a private route table for each AZ that forwards non-VPC traffic to the NAT instance in its AZ.
+- C. Create a second internet gateway on one of the private subnets. Update the route table for the private subnets that forward non-VPC traffic to the private internet gateway.
+- D. Create an egress-only internet gateway on one of the public subnets. Update the route table for the private subnets that forward non-VPC traffic to the egress-only Internet gateway.
 
 ## Question #102
 
@@ -1269,12 +1269,12 @@ Which solution meats these requirements?
 
 A medical records company is hosting an application on Amazon EC2 instances. The application processes customer data files that are stored on Amazon S3. The EC2 instances are hosted in public subnets. The EC2 instances access Amazon S3 over the internet, but they do not require any other network access.
 
-A new requirement mandates that the network trac for file transfers take a private route and not be sent over the internet. Which change to the network architecture should a solutions architect recommend to meet this requirement?
+A new requirement mandates that the network traffic for file transfers take a private route and not be sent over the internet. Which change to the network architecture should a solutions architect recommend to meet this requirement?
 
-- A. Create a NAT gateway. Configure the route table for the public subnets to send trac to Amazon S3 through the NAT gateway.
-- B. Configure the security group for the EC2 instances to restrict outbound trac so that only trac to the S3 prex list is permitted.
+- A. Create a NAT gateway. Configure the route table for the public subnets to send traffic to Amazon S3 through the NAT gateway.
+- B. Configure the security group for the EC2 instances to restrict outbound traffic so that only traffic to the S3 prex list is permitted.
 - C. Move the EC2 instances to private subnets. Create a VPC endpoint for Amazon S3, and link the endpoint to the route table for the private subnets.
-- D. Remove the internet gateway from the VPC. Set up an AWS Direct Connect connection, and route trac to Amazon S3 over the Direct Connect connection.
+- D. Remove the internet gateway from the VPC. Set up an AWS Direct Connect connection, and route traffic to Amazon S3 over the Direct Connect connection.
 
 ## Question #116
 
@@ -1327,7 +1327,7 @@ Which solution will meet these requirements with the LEAST amount of administrat
 
 A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind a Network Load Balancer (NLB) in the us-west2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and availability of the solution. The company launches and congfiures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as targets for a new NLB.
 
-Which solution can the company use to route trac to all the EC2 instances?
+Which solution can the company use to route traffic to all the EC2 instances?
 
 - A. Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin.
 - B. Create a standard accelerator in AWS Global Accelerator. Create endpoint groups in us-west-2 and eu-west-1. Add the two NLBs as endpoints for the endpoint groups.
@@ -1358,7 +1358,7 @@ A company wants to build a scalable key management infrastructure to support dev
 
 A company has a dynamic web application hosted on two Amazon EC2 instances. The company has its own SSL certicate, which is on each instance to perform SSL termination.
 
-There has been an increase in trac recently, and the operations team determined that SSL encryption and decryption is causing the compute capacity of the web servers to reach their maximum limit.
+There has been an increase in traffic recently, and the operations team determined that SSL encryption and decryption is causing the compute capacity of the web servers to reach their maximum limit.
 
 What should a solutions architect do to increase the application's performance?
 
@@ -1377,7 +1377,7 @@ A company has a highly dynamic batch processing job that uses many Amazon EC2 in
 ## Question #125
 
 
-A company runs its two-tier ecommerce website on AWS. The web tier consists of a load balancer that sends trac to Amazon EC2 instances. The database tier uses an Amazon RDS DB instance. The EC2 instances and the RDS DB instance should not be exposed to the public internet. The EC2 instances require internet access to complete payment processing of orders through a third-party web service. The application must be highly available.
+A company runs its two-tier ecommerce website on AWS. The web tier consists of a load balancer that sends traffic to Amazon EC2 instances. The database tier uses an Amazon RDS DB instance. The EC2 instances and the RDS DB instance should not be exposed to the public internet. The EC2 instances require internet access to complete payment processing of orders through a third-party web service. The application must be highly available.
 
 Which combination of conguration options will meet these requirements? (Choose two.)
 
@@ -1561,7 +1561,7 @@ How should a solutions architect design the application to ensure the LEAST amou
 ## Question #142
 
 
-A gaming company is designing a highly available architecture. The application runs on a modied Linux kernel and supports only UDP-based trac. The company needs the front-end tier to provide the best possible user experience. That tier must have low latency, route trac to the nearest edge location, and provide static IP addresses for entry into the application endpoints.
+A gaming company is designing a highly available architecture. The application runs on a modied Linux kernel and supports only UDP-based traffic. The company needs the front-end tier to provide the best possible user experience. That tier must have low latency, route traffic to the nearest edge location, and provide static IP addresses for entry into the application endpoints.
 
 What should a solutions architect do to meet these requirements?
 
@@ -1665,7 +1665,7 @@ A company wants to migrate its on-premises data center to AWS. According to the 
 - A. Use AWS Control Tower to implement data residency guardrails to deny internet access and deny access to all AWS Regions except apnortheast-3.
 - B. Use rules in AWS WAF to prevent internet access. Deny access to all AWS Regions except ap-northeast-3 in the AWS account settings.
 - C. Use AWS Organizations to configure service control policies (SCPS) that prevent VPCs from gaining internet access. Deny access to all AWS Regions except ap-northeast-3.
-- D. Create an outbound rule for the network ACL in each VPC to deny all trac from 0.0.0.0/0. Create an IAM policy for each user to prevent the use of any AWS Region other than ap-northeast-3.
+- D. Create an outbound rule for the network ACL in each VPC to deny all traffic from 0.0.0.0/0. Create an IAM policy for each user to prevent the use of any AWS Region other than ap-northeast-3.
 - E. Use AWS Cong to activate managed rules to detect and alert for internet gateways and to detect and alert for new resources deployed outside of ap-northeast-3.
 
 ## Question #152
@@ -1744,7 +1744,7 @@ Which service will improve the performance of both the real-time and on-demand s
 - C. Amazon Route 53
 - D. Amazon S3 Transfer Acceleration
 
-A company is running a publicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application's trac recently spiked due to fraudulent requests from botnets.
+A company is running a publicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application's traffic recently spiked due to fraudulent requests from botnets.
 
 Which steps should a solutions architect take to block requests from unauthorized users? (Choose two.)
 
@@ -1813,7 +1813,7 @@ Which solution meets these requirements and is the MOST operationally ecient?
 ## Question #165
 
 
-A solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company's security policy requires that all website trac be inspected by AWS WAF.
+A solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company's security policy requires that all website traffic be inspected by AWS WAF.
 
 How should the solutions architect comply with these requirements?
 
@@ -1834,7 +1834,7 @@ Which action should the solutions architect take to accomplish this?
 - C. Use the geoproximity feature of Amazon Route 53.
 - D. Use Amazon CloudFront with the S3 bucket as its origin.
 
-A company runs a production application on a eet of Amazon EC2 instances. The application reads the data from an Amazon SQS queue and processes the messages in parallel. The message volume is unpredictable and often has intermittent trac. This application should continually process messages without any downtime.
+A company runs a production application on a eet of Amazon EC2 instances. The application reads the data from an Amazon SQS queue and processes the messages in parallel. The message volume is unpredictable and often has intermittent traffic. This application should continually process messages without any downtime.
 
 Which solution meets these requirements MOST cost-effectively?
 
@@ -1921,7 +1921,7 @@ Which architecture should the solutions architect choose that provides high avai
 - A. Create an Auto Scaling group that uses three instances across each of two Regions.
 - B. Modify the Auto Scaling group to use three instances across each of two Availability Zones.
 - C. Create an Auto Scaling template that can be used to quickly create more instances in another Region.
-- D. Change the ALB in front of the Amazon EC2 instances in a round-robin conguration to balance trac to the web tier.
+- D. Change the ALB in front of the Amazon EC2 instances in a round-robin conguration to balance traffic to the web tier.
 
 ## Question #175
 
@@ -1934,12 +1934,12 @@ Which solution will meet these requirements?
 
 - A. Configure provisioned concurrency for the Lambda function. Modify the database to be a global database in multiple AWS Regions.
 - B. Use Amazon RDS Proxy to create a proxy for the database. Modify the Lambda function to use the RDS Proxy endpoint instead of the database endpoint.
-- C. Create a read replica for the database in a different AWS Region. Use query string parameters in API Gateway to route trac to the read replica.
+- C. Create a read replica for the database in a different AWS Region. Use query string parameters in API Gateway to route traffic to the read replica.
 - D. Migrate the data from Aurora PostgreSQL to Amazon DynamoDB by using AWS Database Migration Service (AWS DMS). Modify the Lambda function to use the DynamoDB table.
 
 An application runs on Amazon EC2 instances in private subnets. The application needs to access an Amazon DynamoDB table.
 
-What is the MOST secure way to access the table while ensuring that the trac does not leave the AWS network?
+What is the MOST secure way to access the table while ensuring that the traffic does not leave the AWS network?
 
 - A. Use a VPC endpoint for DynamoDB.
 - B. Use a NAT gateway in a public subnet.
@@ -2022,22 +2022,22 @@ Which solution will meet these requirements?
 A. Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon DynamoDB with on-demand capacity for the database. Configure Amazon CloudFront to deliver the website content.
 
 - B. Host static content in Amazon S3. Host dynamic content by using Amazon API Gateway and AWS Lambda. Use Amazon Aurora with Aurora Auto Scaling for the database. Configure Amazon CloudFront to deliver the website content.
-- C. Host all the website content on Amazon EC2 instances. Create an Auto Scaling group to scale the EC2 instances. Use an Application Load Balancer to distribute trac. Use Amazon DynamoDB with provisioned write capacity for the database.
-- D. Host all the website content on Amazon EC2 instances. Create an Auto Scaling group to scale the EC2 instances. Use an Application Load Balancer to distribute trac. Use Amazon Aurora with Aurora Auto Scaling for the database.
+- C. Host all the website content on Amazon EC2 instances. Create an Auto Scaling group to scale the EC2 instances. Use an Application Load Balancer to distribute traffic. Use Amazon DynamoDB with provisioned write capacity for the database.
+- D. Host all the website content on Amazon EC2 instances. Create an Auto Scaling group to scale the EC2 instances. Use an Application Load Balancer to distribute traffic. Use Amazon Aurora with Aurora Auto Scaling for the database.
 
 ## Question #184
 
 
-A company has an AWS account used for software engineering. The AWS account has access to the company's on-premises data center through a pair of AWS Direct Connect connections. All non-VPC trac routes to the virtual private gateway.
+A company has an AWS account used for software engineering. The AWS account has access to the company's on-premises data center through a pair of AWS Direct Connect connections. All non-VPC traffic routes to the virtual private gateway.
 
 A development team recently created an AWS Lambda function through the console. The development team needs to allow the function to access a database that runs in a private subnet in the company's data center.
 
 Which solution will meet these requirements?
 
 - A. Configure the Lambda function to run in the VPC with the appropriate security group.
-- B. Set up a VPN connection from AWS to the data center. Route the trac from the Lambda function through the VPN.
+- B. Set up a VPN connection from AWS to the data center. Route the traffic from the Lambda function through the VPN.
 - C. Update the route tables in the VPC to allow the Lambda function to access the on-premises data center through Direct Connect.
-- D. Create an Elastic IP address. Configure the Lambda function to send trac through the Elastic IP address without an elastic network interface.
+- D. Create an Elastic IP address. Configure the Lambda function to send traffic through the Elastic IP address without an elastic network interface.
 
 ## Question #185
 
@@ -2105,7 +2105,7 @@ Which solution will meet these requirements?
 - A. Create an Amazon S3 bucket. Enable static web hosting on the S3 bucket. Upload the static content to the S3 bucket. Use AWS Lambda to process all dynamic content.
 - B. Deploy the web application to an AWS Elastic Beanstalk environment. Use URL swapping to switch between multiple Elastic Beanstalk environments for feature testing.
 - C. Deploy the web application to Amazon EC2 instances that are congfiured with Java and PHP . Use Auto Scaling groups and an Application Load Balancer to manage the website's availability.
-- D. Containerize the web application. Deploy the web application to Amazon EC2 instances. Use the AWS Load Balancer Controller to dynamically route trac between containers that contain the new site features for testing.
+- D. Containerize the web application. Deploy the web application to Amazon EC2 instances. Use the AWS Load Balancer Controller to dynamically route traffic between containers that contain the new site features for testing.
 
 ## Question #191
 
@@ -2333,14 +2333,14 @@ What should the solutions architect do to ensure that the architecture supports 
 - C. Use Session Manager from AWS Systems Manager to manage the session.
 - D. Use the GetSessionToken API operation in AWS Security Token Service (AWS STS) to manage the session.
 
-A company offers a food delivery service that is growing rapidly. Because of the growth, the company's order processing system is experiencing scaling problems during peak trac hours. The current architecture includes the following:
+A company offers a food delivery service that is growing rapidly. Because of the growth, the company's order processing system is experiencing scaling problems during peak traffic hours. The current architecture includes the following:
 
 - A group of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application
 - Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulll orders
 
 The order collection process occurs quickly, but the order fulllment process can take longer. Data must not be lost because of a scaling event.
 
-A solutions architect must ensure that the order collection process and the order fulllment process can both scale properly during peak trac hours. The solution must optimize utilization of the company's AWS resources.
+A solutions architect must ensure that the order collection process and the order fulllment process can both scale properly during peak traffic hours. The solution must optimize utilization of the company's AWS resources.
 
 Which solution meets these requirements?
 
@@ -2373,14 +2373,14 @@ Which S3 storage class should the company use to meet these requirements?
 ## Question #213
 
 
-A company is developing a new mobile app. The company must implement proper trac ltering to protect its Application Load Balancer (ALB) against common application-level attacks, such as cross-site scripting or SQL injection. The company has minimal infrastructure and operational staff. The company needs to reduce its share of the responsibility in managing, updating, and securing servers for its AWS environment.
+A company is developing a new mobile app. The company must implement proper traffic ltering to protect its Application Load Balancer (ALB) against common application-level attacks, such as cross-site scripting or SQL injection. The company has minimal infrastructure and operational staff. The company needs to reduce its share of the responsibility in managing, updating, and securing servers for its AWS environment.
 
 What should a solutions architect recommend to meet these requirements?
 
 - A. Configure AWS WAF rules and associate them with the ALB.
 - B. Deploy the application using Amazon S3 with public hosting enabled.
 - C. Deploy AWS Shield Advanced and add the ALB as a protected resource.
-- D. Create a new ALB that directs trac to an Amazon EC2 instance running a third-party rewall, which then passes the trac to the current ALB.
+- D. Create a new ALB that directs traffic to an Amazon EC2 instance running a third-party rewall, which then passes the traffic to the current ALB.
 
 ## Question #214
 
@@ -2427,7 +2427,7 @@ What should a solutions architect do to meet these requirements?
 ## Question #218
 
 
-A company has a web server running on an Amazon EC2 instance in a public subnet with an Elastic IP address. The default security group is assigned to the EC2 instance. The default network ACL has been modied to block all trac. A solutions architect needs to make the web server accessible from everywhere on port 443.
+A company has a web server running on an Amazon EC2 instance in a public subnet with an Elastic IP address. The default security group is assigned to the EC2 instance. The default network ACL has been modied to block all traffic. A solutions architect needs to make the web server accessible from everywhere on port 443.
 
 Which combination of steps will accomplish this task? (Choose two.)
 
@@ -2437,7 +2437,7 @@ Which combination of steps will accomplish this task? (Choose two.)
 - D. Update the network ACL to allow inbound/outbound TCP port 443 from source 0.0.0.0/0 and to destination 0.0.0.0/0.
 - E. Update the network ACL to allow inbound TCP port 443 from source 0.0.0.0/0 and outbound TCP port 32768-65535 to destination 0.0.0.0/0.
 
-A company's application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The company used AWS CloudFormation to deploy infrastructure and used the M5 EC2 instance family. As trac increased, the application performance degraded. Users are reporting delays when the users attempt to access the application.
+A company's application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The company used AWS CloudFormation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the application performance degraded. Users are reporting delays when the users attempt to access the application.
 
 Which solution will resolve these issues in the MOST operationally ecient way?
 
@@ -2482,7 +2482,7 @@ How should a solutions architect grant this access to the vendor?
 ## Question #223
 
 
-A company has deployed a Java Spring Boot application as a pod that runs on Amazon Elastic Kubernetes Service (Amazon EKS) in private subnets. The application needs to write data to an Amazon DynamoDB table. A solutions architect must ensure that the application can interact with the DynamoDB table without exposing trac to the internet.
+A company has deployed a Java Spring Boot application as a pod that runs on Amazon Elastic Kubernetes Service (Amazon EKS) in private subnets. The application needs to write data to an Amazon DynamoDB table. A solutions architect must ensure that the application can interact with the DynamoDB table without exposing traffic to the internet.
 
 Which combination of steps should the solutions architect take to accomplish this goal? (Choose two.)
 
@@ -2522,7 +2522,7 @@ A company collects data from thousands of remote devices by using a RESTful web 
 Which combination of steps should a solutions architect take to meet these requirements? (Choose two.)
 
 - A. Use AWS Glue to process the raw data in Amazon S3.
-- B. Use Amazon Route 53 to route trac to different EC2 instances.
+- B. Use Amazon Route 53 to route traffic to different EC2 instances.
 - C. Add more EC2 instances to accommodate the increasing amount of incoming data.
 - D. Send the raw data to Amazon Simple Queue Service (Amazon SQS). Use EC2 instances to process the data.
 - E. Use Amazon API Gateway to send the raw data to an Amazon Kinesis data stream. Configure Amazon Kinesis Data Firehose to use the data stream as a source to deliver the data to Amazon S3.
@@ -2541,9 +2541,9 @@ Which solution will delete objects that are older than 3 years in the MOST cost-
 - C. Create an AWS Lambda function to enumerate and delete objects from Amazon S3 that are older than 3 years.
 - D. Configure the parent account as the owner of all objects that are delivered to the S3 bucket.
 
-A company has an API that receives real-time data from a eet of monitoring devices. The API stores this data in an Amazon RDS DB instance for later analysis. The amount of data that the monitoring devices send to the API uctuates. During periods of heavy trac, the API often returns timeout errors.
+A company has an API that receives real-time data from a eet of monitoring devices. The API stores this data in an Amazon RDS DB instance for later analysis. The amount of data that the monitoring devices send to the API uctuates. During periods of heavy traffic, the API often returns timeout errors.
 
-After an inspection of the logs, the company determines that the database is not capable of processing the volume of write trac that comes from the API. A solutions architect must minimize the number of connections to the database and must ensure that data is not lost during periods of heavy trac.
+After an inspection of the logs, the company determines that the database is not capable of processing the volume of write traffic that comes from the API. A solutions architect must minimize the number of connections to the database and must ensure that data is not lost during periods of heavy traffic.
 
 Which solution will meet these requirements?
 
@@ -2566,7 +2566,7 @@ Which solution meets these requirements?
 
 ## Question #230
 
-A company is concerned that two NAT instances in use will no longer be able to support the trac needed for the company's application. A solutions architect wants to implement a solution that is highly available, fault tolerant, and automatically scalable.
+A company is concerned that two NAT instances in use will no longer be able to support the traffic needed for the company's application. A solutions architect wants to implement a solution that is highly available, fault tolerant, and automatically scalable.
 
 What should the solutions architect recommend?
 
@@ -2580,7 +2580,7 @@ An application runs on an Amazon EC2 instance that has an Elastic IP address in 
 
 Which solution will provide the required access MOST securely?
 
-- A. Create a DB instance security group that allows all trac from the public IP address of the application server in VPC A.
+- A. Create a DB instance security group that allows all traffic from the public IP address of the application server in VPC A.
 - B. Configure a VPC peering connection between VPC A and VPC B.
 - C. Make the DB instance publicly accessible. Assign a public IP address to the DB instance.
 - D. Launch an EC2 instance with an Elastic IP address into VPC B. Proxy all requests through the new EC2 instance.
@@ -2734,7 +2734,7 @@ What should a solutions architect recommend to meet these requirements?
 
 <!-- image -->
 
-A company is launching an application on AWS. The application uses an Application Load Balancer (ALB) to direct trac to at least two Amazon EC2 instances in a single target group. The instances are in an Auto Scaling group for each environment. The company requires a development environment and a production environment. The production environment will have periods of high trac.
+A company is launching an application on AWS. The application uses an Application Load Balancer (ALB) to direct traffic to at least two Amazon EC2 instances in a single target group. The instances are in an Auto Scaling group for each environment. The company requires a development environment and a production environment. The production environment will have periods of high traffic.
 
 Which solution will configure the development environment MOST cost-effectively?
 
@@ -2746,13 +2746,13 @@ Which solution will configure the development environment MOST cost-effectively?
 ## Question #246
 
 
-A company runs a web application on Amazon EC2 instances in multiple Availability Zones. The EC2 instances are in private subnets. A solutions architect implements an internet-facing Application Load Balancer (ALB) and species the EC2 instances as the target group. However, the internet trac is not reaching the EC2 instances.
+A company runs a web application on Amazon EC2 instances in multiple Availability Zones. The EC2 instances are in private subnets. A solutions architect implements an internet-facing Application Load Balancer (ALB) and species the EC2 instances as the target group. However, the internet traffic is not reaching the EC2 instances.
 
 How should the solutions architect reconfigure the architecture to resolve this issue?
 
-- A. Replace the ALB with a Network Load Balancer. Configure a NAT gateway in a public subnet to allow internet trac.
-- B. Move the EC2 instances to public subnets. Add a rule to the EC2 instances' security groups to allow outbound trac to 0.0.0.0/0.
-- C. Update the route tables for the EC2 instances' subnets to send 0.0.0.0/0 trac through the internet gateway route. Add a rule to the EC2 instances' security groups to allow outbound trac to 0.0.0.0/0.
+- A. Replace the ALB with a Network Load Balancer. Configure a NAT gateway in a public subnet to allow internet traffic.
+- B. Move the EC2 instances to public subnets. Add a rule to the EC2 instances' security groups to allow outbound traffic to 0.0.0.0/0.
+- C. Update the route tables for the EC2 instances' subnets to send 0.0.0.0/0 traffic through the internet gateway route. Add a rule to the EC2 instances' security groups to allow outbound traffic to 0.0.0.0/0.
 - D. Create public subnets in each Availability Zone. Associate the public subnets with the ALB. Update the route tables for the public subnets with a route to the private subnets.
 
 ## Question #247
@@ -2792,7 +2792,7 @@ Which AWS solution meets these requirements?
 ## Question #250
 
 
-A company's security team requests that network trac be captured in VPC Flow Logs. The logs will be frequently accessed for 90 days and then accessed intermittently.
+A company's security team requests that network traffic be captured in VPC Flow Logs. The logs will be frequently accessed for 90 days and then accessed intermittently.
 
 What should a solutions architect do to meet these requirements when conguring the logs?
 
@@ -2935,7 +2935,7 @@ The company wants to provide its customers with different versions of content ba
 Which combination of actions should a solutions architect take to meet these requirements? (Choose two.)
 
 - A. Configure Amazon CloudFront to cache multiple versions of the content.
-- B. Configure a host header in a Network Load Balancer to forward trac to different instances.
+- B. Configure a host header in a Network Load Balancer to forward traffic to different instances.
 - C. Configure a Lambda@Edge function to send specic objects to users based on the User-Agent header.
 - D. Configure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). Configure the NLB to set up host-based routing to different EC2 instances.
 - E. Configure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). Configure the NLB to set up path-based routing to different EC2 instances.
@@ -2950,9 +2950,9 @@ The solutions architect must implement a solution to provide the application's E
 Which solution will meet these requirements MOST cost-effectively?
 
 - A. Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application's security group.
-- B. Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route trac through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application's security group.
+- B. Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application's security group.
 - C. Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection's security group to allow inbound connection from the application's security group.
-- D. Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route trac through the Transit VPC. Configure an inbound rule for the Transit VPC's security group to allow inbound connection from the application's security group.
+- D. Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC's security group to allow inbound connection from the application's security group.
 
 A company is building an application that consists of several microservices. The company has decided to use container technologies to deploy its software on AWS. The company needs a solution that minimizes the amount of ongoing effort for maintenance and scaling. The company cannot manage additional infrastructure.
 
@@ -2967,7 +2967,7 @@ Which combination of actions should a solutions architect take to meet these req
 ## Question #264
 
 
-A company has a web application hosted over 10 Amazon EC2 instances with trac directed by Amazon Route 53. The company occasionally experiences a timeout error when attempting to browse the application. The networking team nds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error.
+A company has a web application hosted over 10 Amazon EC2 instances with traffic directed by Amazon Route 53. The company occasionally experiences a timeout error when attempting to browse the application. The networking team nds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error.
 
 What should a solutions architect implement to overcome these timeout errors?
 
@@ -2988,13 +2988,13 @@ Which solution meets these requirements and is MOST secure?
 - C. Configure a public Application Load Balancer (ALB) with multiple redundant Amazon EC2 instances in private subnets. Configure Amazon CloudFront to deliver HTTPS content using the public ALB as the origin.
 - D. Configure a public Application Load Balancer with multiple redundant Amazon EC2 instances in public subnets. Configure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin.
 
-A company has a popular gaming platform running on AWS. The application is sensitive to latency because latency can impact the user experience and introduce unfair advantages to some players. The application is deployed in every AWS Region. It runs on Amazon EC2 instances that are part of Auto Scaling groups congfiured behind Application Load Balancers (ALBs). A solutions architect needs to implement a mechanism to monitor the health of the application and redirect trac to healthy endpoints.
+A company has a popular gaming platform running on AWS. The application is sensitive to latency because latency can impact the user experience and introduce unfair advantages to some players. The application is deployed in every AWS Region. It runs on Amazon EC2 instances that are part of Auto Scaling groups congfiured behind Application Load Balancers (ALBs). A solutions architect needs to implement a mechanism to monitor the health of the application and redirect traffic to healthy endpoints.
 
 Which solution meets these requirements?
 
 - A. Configure an accelerator in AWS Global Accelerator. Add a listener for the port that the application listens on, and attach it to a Regional endpoint in each Region. Add the ALB as the endpoint.
-- B. Create an Amazon CloudFront distribution and specify the ALB as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the trac.
-- C. Create an Amazon CloudFront distribution and specify Amazon S3 as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the trac.
+- B. Create an Amazon CloudFront distribution and specify the ALB as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traffic.
+- C. Create an Amazon CloudFront distribution and specify Amazon S3 as the origin server. Configure the cache behavior to use origin cache headers. Use AWS Lambda functions to optimize the traffic.
 - D. Configure an Amazon DynamoDB database to serve as the data store for the application. Create a DynamoDB Accelerator (DAX) cluster to act as the in-memory cache for DynamoDB hosting the application data.
 
 ## Question #267
@@ -3103,9 +3103,9 @@ How should the scaling be changed to address the staff complaints and keep costs
 ## Question #276
 
 
-A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application' s data layer that uses Oracle-specic PL/SQL functions. Trac to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and denes the minimum healthy instance count only. The company predicts that trac will continue to increase at a steady but unpredictable rate before leveling off.
+A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application' s data layer that uses Oracle-specic PL/SQL functions. Trac to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and denes the minimum healthy instance count only. The company predicts that traffic will continue to increase at a steady but unpredictable rate before leveling off.
 
-What should a solutions architect do to ensure the system can automatically scale for the increased trac? (Choose two.)
+What should a solutions architect do to ensure the system can automatically scale for the increased traffic? (Choose two.)
 
 - A. Configure storage Auto Scaling on the RDS for Oracle instance.
 - B. Migrate the database to Amazon Aurora to use Auto Scaling storage.
@@ -3125,7 +3125,7 @@ Which storage solution is MOST cost-effective?
 - C. Use Amazon EFS for storing the video content. Once processing is complete, transfer the files to Amazon Elastic Block Store (Amazon EBS).
 - D. Use Amazon S3 for storing the video content. Move the files temporarily over to an Amazon Elastic Block Store (Amazon EBS) volume attached to the server for processing.
 
-A company wants to create an application to store employee data in a hierarchical structured relationship. The company needs a minimum-latency response to high-trac queries for the employee data and must protect any sensitive data. The company also needs to receive monthly email messages if any nancial information is present in the employee data.
+A company wants to create an application to store employee data in a hierarchical structured relationship. The company needs a minimum-latency response to high-traffic queries for the employee data and must protect any sensitive data. The company also needs to receive monthly email messages if any nancial information is present in the employee data.
 
 Which combination of steps should a solutions architect take to meet these requirements? (Choose two.)
 
@@ -3171,14 +3171,14 @@ Which solution meets these requirements?
 ## Question #282
 
 
-A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web trac to the EC2 instances. The company wants to implement new security measures to restrict inbound trac from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances.
+A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web traffic to the EC2 instances. The company wants to implement new security measures to restrict inbound traffic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances.
 
 Which solution will meet these requirements?
 
-- A. Configure a route in a route table to direct trac from the internet to the private IP addresses of the EC2 instances.
-- B. Configure the security group for the EC2 instances to only allow trac that comes from the security group for the ALB.
+- A. Configure a route in a route table to direct traffic from the internet to the private IP addresses of the EC2 instances.
+- B. Configure the security group for the EC2 instances to only allow traffic that comes from the security group for the ALB.
 - C. Move the EC2 instances into the public subnet. Give the EC2 instances a set of Elastic IP addresses.
-- D. Configure the security group for the ALB to allow any TCP trac on any port.
+- D. Configure the security group for the ALB to allow any TCP traffic on any port.
 
 ## Question #283
 
@@ -3343,7 +3343,7 @@ A. 10.0.1.0/32
 ## Question #297
 
 
-A company deploys an application on ve Amazon EC2 instances. An Application Load Balancer (ALB) distributes trac to the instances by using a target group. The average CPU usage on each of the instances is below 10% most of the time, with occasional surges to 65%.
+A company deploys an application on ve Amazon EC2 instances. An Application Load Balancer (ALB) distributes traffic to the instances by using a target group. The average CPU usage on each of the instances is below 10% most of the time, with occasional surges to 65%.
 
 A solutions architect needs to implement a solution to automate the scalability of the application. The solution must optimize the cost of the architecture and must ensure that the application has enough CPU resources when surges occur.
 
@@ -3418,11 +3418,11 @@ Which combination of solutions will meet these requirements? (Choose two.)
 ## Question #303
 
 
-A company is launching a new application deployed on an Amazon Elastic Container Service (Amazon ECS) cluster and is using the Fargate launch type for ECS tasks. The company is monitoring CPU and memory usage because it is expecting high trac to the application upon its launch. However, the company wants to reduce costs when utilization decreases.
+A company is launching a new application deployed on an Amazon Elastic Container Service (Amazon ECS) cluster and is using the Fargate launch type for ECS tasks. The company is monitoring CPU and memory usage because it is expecting high traffic to the application upon its launch. However, the company wants to reduce costs when utilization decreases.
 
 What should a solutions architect recommend?
 
-- A. Use Amazon EC2 Auto Scaling to scale at certain periods based on previous trac patterns.
+- A. Use Amazon EC2 Auto Scaling to scale at certain periods based on previous traffic patterns.
 - B. Use an AWS Lambda function to scale Amazon ECS based on metric breaches that trigger an Amazon CloudWatch alarm.
 - C. Use Amazon EC2 Auto Scaling with simple scaling policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.
 - D. Use AWS Application Auto Scaling with target tracking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.
@@ -3694,14 +3694,14 @@ Which combination of actions should a solutions architect recommend to meet thes
 ## Question #327
 
 
-A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a private subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party's URL. Other internet trac must be blocked.
+A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a private subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party's URL. Other internet traffic must be blocked.
 
 Which solution meets these requirements?
 
-- A. Update the route table for the private subnet to route the outbound trac to an AWS Network Firewall rewall. Configure domain list rule groups.
-- B. Set up an AWS WAF web ACL. Create a custom set of rules that lter trac requests based on source and destination IP address range sets.
-- C. Implement strict inbound security group rules. Configure an outbound rule that allows trac only to the authorized software repositories on the internet by specifying the URLs.
-- D. Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound trac to the ALB. Use a URL-based rule listener in the ALB's target group for outbound access to the internet.
+- A. Update the route table for the private subnet to route the outbound traffic to an AWS Network Firewall rewall. Configure domain list rule groups.
+- B. Set up an AWS WAF web ACL. Create a custom set of rules that lter traffic requests based on source and destination IP address range sets.
+- C. Implement strict inbound security group rules. Configure an outbound rule that allows traffic only to the authorized software repositories on the internet by specifying the URLs.
+- D. Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB's target group for outbound access to the internet.
 
 A company is hosting a three-tier ecommerce application in the AWS Cloud. The company hosts the website on Amazon S3 and integrates the website with an API that handles sales requests. The company hosts the API on three Amazon EC2 instances behind an Application Load Balancer (ALB). The API consists of static and dynamic front-end content along with backend workers that process sales requests asynchronously.
 
@@ -3709,9 +3709,9 @@ The company is expecting a signicant and sudden increase in the number of sales 
 
 What should a solutions architect recommend to ensure that all the requests are processed successfully?
 
-- A. Add an Amazon CloudFront distribution for the dynamic content. Increase the number of EC2 instances to handle the increase in trac.
-- B. Add an Amazon CloudFront distribution for the static content. Place the EC2 instances in an Auto Scaling group to launch new instances based on network trac.
-- C. Add an Amazon CloudFront distribution for the dynamic content. Add an Amazon ElastiCache instance in front of the ALB to reduce trac for the API to handle.
+- A. Add an Amazon CloudFront distribution for the dynamic content. Increase the number of EC2 instances to handle the increase in traffic.
+- B. Add an Amazon CloudFront distribution for the static content. Place the EC2 instances in an Auto Scaling group to launch new instances based on network traffic.
+- C. Add an Amazon CloudFront distribution for the dynamic content. Add an Amazon ElastiCache instance in front of the ALB to reduce traffic for the API to handle.
 - D. Add an Amazon CloudFront distribution for the static content. Add an Amazon Simple Queue Service (Amazon SQS) queue to receive requests from the website for later processing by the EC2 instances.
 
 ## Question #329
@@ -3756,7 +3756,7 @@ The files are stored in an on-premises Windows file server. However, due to an i
 
 Which solution will meet these requirements?
 
-- A. Migrate the file server to an Amazon EC2 instance in a public subnet. Configure the security group to limit inbound trac to the employees' IP addresses.
+- A. Migrate the file server to an Amazon EC2 instance in a public subnet. Configure the security group to limit inbound traffic to the employees' IP addresses.
 - B. Migrate the files to an Amazon FSx for Windows File Server file system. Integrate the Amazon FSx file system with the on-premises Active Directory. Configure AWS Client VPN.
 - C. Migrate the files to Amazon S3, and create a private VPC endpoint. Create a signed URL to allow download.
 - D. Migrate the files to Amazon S3, and create a public VPC endpoint. Allow employees to sign on with AWS IAM Identity Center (AWS Single Sign-On).
@@ -3808,7 +3808,7 @@ What should a solutions architect do to meet this requirement with the LEAST ope
 
 A company has deployed a web application on AWS. The company hosts the backend database on Amazon RDS for MySQL with a primary DB instance and ve read replicas to support scaling needs. The read replicas must lag no more than 1 second behind the primary DB instance. The database routinely runs scheduled stored procedures.
 
-As trac on the website increases, the replicas experience additional lag during periods of peak load. A solutions architect must reduce the replication lag as much as possible. The solutions architect must minimize changes to the application code and must minimize ongoing operational overhead.
+As traffic on the website increases, the replicas experience additional lag during periods of peak load. A solutions architect must reduce the replication lag as much as possible. The solutions architect must minimize changes to the application code and must minimize ongoing operational overhead.
 
 Which solution will meet these requirements?
 
@@ -3994,7 +3994,7 @@ Which solution will meet these requirements?
 ## Question #353
 
 
-A company hosts a three-tier web application on Amazon EC2 instances in a single Availability Zone. The web application uses a self-managed MySQL database that is hosted on an EC2 instance to store data in an Amazon Elastic Block Store (Amazon EBS) volume. The MySQL database currently uses a 1 TB Provisioned IOPS SSD (io2) EBS volume. The company expects trac of 1,000 IOPS for both reads and writes at peak trac.
+A company hosts a three-tier web application on Amazon EC2 instances in a single Availability Zone. The web application uses a self-managed MySQL database that is hosted on an EC2 instance to store data in an Amazon Elastic Block Store (Amazon EBS) volume. The MySQL database currently uses a 1 TB Provisioned IOPS SSD (io2) EBS volume. The company expects traffic of 1,000 IOPS for both reads and writes at peak traffic.
 
 The company wants to minimize any disruptions, stabilize performance, and reduce costs while retaining the capacity for double the IOPS. The company wants to move the database tier to a fully managed solution that is highly available and fault tolerant.
 
@@ -4005,7 +4005,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Use Amazon S3 Intelligent-Tiering access tiers.
 - D. Use two large EC2 instances to host the database in active-passive mode.
 
-A company hosts a serverless application on AWS. The application uses Amazon API Gateway, AWS Lambda, and an Amazon RDS for PostgreSQL database. The company notices an increase in application errors that result from database connection timeouts during times of peak trac or unpredictable trac. The company needs a solution that reduces the application failures with the least amount of change to the code.
+A company hosts a serverless application on AWS. The application uses Amazon API Gateway, AWS Lambda, and an Amazon RDS for PostgreSQL database. The company notices an increase in application errors that result from database connection timeouts during times of peak traffic or unpredictable traffic. The company needs a solution that reduces the application failures with the least amount of change to the code.
 
 What should a solutions architect do to meet these requirements?
 
@@ -4257,7 +4257,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 ## Question #376
 
 
-A company has launched an Amazon RDS for MySQL DB instance. Most of the connections to the database come from serverless applications. Application trac to the database changes signicantly at random intervals. At times of high demand, users report that their applications experience database connection rejection errors.
+A company has launched an Amazon RDS for MySQL DB instance. Most of the connections to the database come from serverless applications. Application traffic to the database changes signicantly at random intervals. At times of high demand, users report that their applications experience database connection rejection errors.
 
 Which solution will resolve this issue with the LEAST operational overhead?
 
@@ -4282,10 +4282,10 @@ A company is developing a real-time multiplayer game that uses UDP for communica
 
 Which solution should a solutions architect recommend?
 
-- A. Use Amazon Route 53 for trac distribution and Amazon Aurora Serverless for data storage.
-- B. Use a Network Load Balancer for trac distribution and Amazon DynamoDB on-demand for data storage.
-- C. Use a Network Load Balancer for trac distribution and Amazon Aurora Global Database for data storage.
-- D. Use an Application Load Balancer for trac distribution and Amazon DynamoDB global tables for data storage.
+- A. Use Amazon Route 53 for traffic distribution and Amazon Aurora Serverless for data storage.
+- B. Use a Network Load Balancer for traffic distribution and Amazon DynamoDB on-demand for data storage.
+- C. Use a Network Load Balancer for traffic distribution and Amazon Aurora Global Database for data storage.
+- D. Use an Application Load Balancer for traffic distribution and Amazon DynamoDB global tables for data storage.
 
 ## Question #379
 
@@ -4325,7 +4325,7 @@ Which solution will meet these requirements with the LEAST amount of change to t
 ## Question #382
 
 
-A company has a three-tier application on AWS that ingests sensor data from its users' devices. The trac ows through a Network Load Balancer (NLB), then to Amazon EC2 instances for the web tier, and nally to EC2 instances for the application tier. The application tier makes calls to a database.
+A company has a three-tier application on AWS that ingests sensor data from its users' devices. The traffic ows through a Network Load Balancer (NLB), then to Amazon EC2 instances for the web tier, and nally to EC2 instances for the application tier. The application tier makes calls to a database.
 
 What should a solutions architect do to improve the security of the data in transit?
 
@@ -4398,10 +4398,10 @@ The web application is not working as intended. The web application reports that
 
 What should a solutions architect recommend to x the application?
 
-- A. Add an explicit rule to the private subnet's network ACL to allow trac from the web tier's EC2 instances.
-- B. Add a route in the VPC route table to allow trac between the web tier's EC2 instances and the database tier.
+- A. Add an explicit rule to the private subnet's network ACL to allow traffic from the web tier's EC2 instances.
+- B. Add a route in the VPC route table to allow traffic between the web tier's EC2 instances and the database tier.
 - C. Deploy the web tier's EC2 instances and the database tier's RDS instance into two separate VPCs, and configure VPC peering.
-- D. Add an inbound rule to the security group of the database tier's RDS instance to allow trac from the web tiers security group.
+- D. Add an inbound rule to the security group of the database tier's RDS instance to allow traffic from the web tiers security group.
 
 ## Question #389
 
@@ -4447,10 +4447,10 @@ The application must be secure and accessible for global customers that have dyn
 
 How should a solutions architect configure the security groups to meet these requirements?
 
-- A. Configure the security group for the web servers to allow inbound trac on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound trac on port 3306 from the security group of the web servers.
-- B. Configure the security group for the web servers to allow inbound trac on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound trac on port 3306 from the security group of the web servers.
-- C. Configure the security group for the web servers to allow inbound trac on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound trac on port 3306 from the IP addresses of the customers.
-- D. Configure the security group for the web servers to allow inbound trac on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound trac on port 3306 from 0.0.0.0/0.
+- A. Configure the security group for the web servers to allow inbound traffic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traffic on port 3306 from the security group of the web servers.
+- B. Configure the security group for the web servers to allow inbound traffic on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound traffic on port 3306 from the security group of the web servers.
+- C. Configure the security group for the web servers to allow inbound traffic on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound traffic on port 3306 from the IP addresses of the customers.
+- D. Configure the security group for the web servers to allow inbound traffic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traffic on port 3306 from 0.0.0.0/0.
 
 ## Question #393
 
@@ -4550,7 +4550,7 @@ What should a solutions architect do to meet these requirements with the LEAST a
 - C. Enable Amazon DynamoDB Streams on the table. Use triggers to write to a single Amazon Simple Notication Service (Amazon SNS) topic to which the teams can subscribe.
 - D. Add a custom attribute to each record to ag new items. Write a cron job that scans the table every minute for items that are new and noties an Amazon Simple Queue Service (Amazon SQS) queue to which the teams can subscribe.
 
-## Question #401
+~~## Question #401~~
 
 
 A company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in the company's data center. The application recently experienced data loss after a database server crashed because of an unexpected power outage.
@@ -4564,6 +4564,8 @@ Which solution will meet these requirements?
 - C. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance with a read replica in a single Availability Zone. Promote the read replica to replace the primary DB instance if the primary DB instance fails.
 - D. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Deploy the primary and secondary database servers on EC2 instances across multiple Availability Zones. Use Amazon Elastic Block Store (Amazon EBS) Multi-Attach to create shared storage between the instances.
 
+## Question #402
+
 A company needs to ingest and handle large amounts of streaming data that its application generates. The application runs on Amazon EC2 instances and sends data to Amazon Kinesis Data Streams, which is congfiured with default settings. Every other day, the application consumes the data and writes the data to an Amazon S3 bucket for business intelligence (BI) processing. The company observes that Amazon S3 is not receiving all the data that the application sends to Kinesis Data Streams.
 
 What should a solutions architect do to resolve this issue?
@@ -4573,7 +4575,7 @@ What should a solutions architect do to resolve this issue?
 - C. Update the number of Kinesis shards to handle the throughput of the data that is sent to Kinesis Data Streams.
 - D. Turn on S3 Versioning within the S3 bucket to preserve every version of every object that is ingested in the S3 bucket.
 
-## Question #403
+~~## Question #403~~
 
 
 A developer has an application that uses an AWS Lambda function to upload files to Amazon S3 and needs the required permissions to perform the task. The developer already has an IAM user with valid IAM credentials required for Amazon S3.
@@ -4585,7 +4587,7 @@ What should a solutions architect do to grant the permissions?
 - C. Create a new IAM user and use the existing IAM credentials in the Lambda function.
 - D. Create an IAM execution role with the required permissions and attach the IAM role to the Lambda function.
 
-## Question #404
+~~## Question #404~~
 
 
 A company has deployed a serverless application that invokes an AWS Lambda function when new documents are uploaded to an Amazon S3 bucket. The application uses the Lambda function to process the documents. After a recent marketing campaign, the company noticed that the application did not process many of the documents.
@@ -4597,7 +4599,9 @@ What should a solutions architect do to improve the architecture of this applica
 - C. Deploy an additional Lambda function. Load balance the processing of the documents across the two Lambda functions.
 - D. Create an Amazon Simple Queue Service (Amazon SQS) queue. Send the requests to the queue. Configure the queue as an event source for Lambda.
 
-A solutions architect is designing the architecture for a software demonstration environment. The environment will run on Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer (ALB). The system will experience signicant increases in trac during working hours but is not required to operate on weekends.
+## Question #405
+
+A solutions architect is designing the architecture for a software demonstration environment. The environment will run on Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer (ALB). The system will experience signicant increases in traffic during working hours but is not required to operate on weekends.
 
 Which combination of actions should the solutions architect take to ensure that the system can scale to meet demand? (Choose two.)
 
@@ -4614,11 +4618,11 @@ A solutions architect is designing a two-tiered architecture that includes a pub
 
 Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)
 
-- A. Create a network ACL for the public subnet. Add a rule to deny outbound trac to 0.0.0.0/0 on port 3306.
-- B. Create a security group for the DB instance. Add a rule to allow trac from the public subnet CIDR block on port 3306.
-- C. Create a security group for the web servers in the public subnet. Add a rule to allow trac from 0.0.0.0/0 on port 443.
-- D. Create a security group for the DB instance. Add a rule to allow trac from the web servers' security group on port 3306.
-- E. Create a security group for the DB instance. Add a rule to deny all trac except trac from the web servers' security group on port 3306.
+- A. Create a network ACL for the public subnet. Add a rule to deny outbound traffic to 0.0.0.0/0 on port 3306.
+- B. Create a security group for the DB instance. Add a rule to allow traffic from the public subnet CIDR block on port 3306.
+- C. Create a security group for the web servers in the public subnet. Add a rule to allow traffic from 0.0.0.0/0 on port 443.
+- D. Create a security group for the DB instance. Add a rule to allow traffic from the web servers' security group on port 3306.
+- E. Create a security group for the DB instance. Add a rule to deny all traffic except traffic from the web servers' security group on port 3306.
 
 ## Question #407
 
@@ -4631,6 +4635,9 @@ Which solution meets these requirements?
 - B. Create an AWS Storage Gateway file gateway. Create a file share that uses the required client protocol. Connect the application server to the file share.
 - C. Create an Amazon Elastic File System (Amazon EFS) file system, and configure it to support Lustre. Attach the file system to the origin server. Connect the application server to the file system.
 - D. Create an Amazon FSx for Lustre file system. Attach the file system to the origin server. Connect the application server to the file system.
+
+## Question #408
+
 
 A company runs an application that receives data from thousands of geographically dispersed remote devices that use UDP . The application processes the data immediately and sends a message back to the device if necessary. No data is stored.
 
@@ -4667,6 +4674,9 @@ Which solution will meet this requirement?
 - C. Create an EC2 instance tag that has a key of Encrypt and a value of True. Tag all instances that require encryption at the EBS level.
 - D. Create an AWS Key Management Service (AWS KMS) key policy that enforces EBS encryption in the account. Ensure that the key policy is active.
 
+## Question #411
+
+
 A company has a web application with sporadic usage patterns. There is heavy usage at the beginning of each month, moderate usage at the start of each week, and unpredictable usage during the week. The application consists of a web server and a MySQL database server running inside the data center. The company would like to move the application to the AWS Cloud, and needs to select a cost-effective database platform that will not require database modications.
 
 Which solution will meet these requirements?
@@ -4691,7 +4701,7 @@ Which solution will meet these requirements?
 ## Question #413
 
 
-An ecommerce company is experiencing an increase in user trac. The company's store is deployed on Amazon EC2 instances as a two-tier web application consisting of a web tier and a separate database tier. As trac increases, the company notices that the architecture is causing signicant delays in sending timely marketing and order conrmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues and minimize operational overhead.
+An ecommerce company is experiencing an increase in user traffic. The company's store is deployed on Amazon EC2 instances as a two-tier web application consisting of a web tier and a separate database tier. As traffic increases, the company notices that the architecture is causing signicant delays in sending timely marketing and order conrmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues and minimize operational overhead.
 
 What should a solutions architect do to meet these requirements?
 
@@ -4699,6 +4709,9 @@ What should a solutions architect do to meet these requirements?
 - B. Configure the web instance to send email through Amazon Simple Email Service (Amazon SES).
 - C. Configure the web instance to send email through Amazon Simple Notication Service (Amazon SNS).
 - D. Create a separate application tier using EC2 instances dedicated to email processing. Place the instances in an Auto Scaling group.
+
+
+## Question #414
 
 A company has a business system that generates hundreds of reports each day. The business system saves the reports to a network share in CSV format. The company needs to store this data in the AWS Cloud in near-real time for analysis.
 
@@ -4783,7 +4796,7 @@ Which solution will meet these requirements?
 - C. Use an Amazon RDS Multi-AZ DB instance deployment. Point the read workload to the secondary instances in the Multi-AZ pair.
 - D. Use an Amazon RDS Multi-AZ DB cluster deployment Point the read workload to the reader endpoint.
 
-A company runs a highly available SFTP service. The SFTP service uses two Amazon EC2 Linux instances that run with elastic IP addresses to accept trac from trusted IP sources on the internet. The SFTP service is backed by shared storage that is attached to the instances. User accounts are created and managed as Linux users in the SFTP servers.
+A company runs a highly available SFTP service. The SFTP service uses two Amazon EC2 Linux instances that run with elastic IP addresses to accept traffic from trusted IP sources on the internet. The SFTP service is backed by shared storage that is attached to the instances. User accounts are created and managed as Linux users in the SFTP servers.
 
 The company wants a serverless option that provides high IOPS performance and highly congurable security. The company also wants to maintain control over user permissions.
 
@@ -4915,7 +4928,7 @@ What should a solutions architect do to meet these requirements?
 - A. Set up an Amazon ElastiCache for Memcached cluster to cache the scores for the web application to display.
 - B. Set up an Amazon ElastiCache for Redis cluster to compute and cache the scores for the web application to display.
 - C. Place an Amazon CloudFront distribution in front of the web application to cache the scoreboard in a section of the application.
-- D. Create a read replica on Amazon RDS for MySQL to run queries to compute the scoreboard and serve the read trac to the web application.
+- D. Create a read replica on Amazon RDS for MySQL to run queries to compute the scoreboard and serve the read traffic to the web application.
 
 ## Question #432
 
@@ -5002,7 +5015,7 @@ Which solution resolves this issue with the LEAST operational overhead?
 - A. Add an additional IPv4 CIDR block to increase the number of IP addresses and create additional subnets in the VPC. Create new resources in the new subnets by using the new CIDR.
 - B. Create a second VPC with additional subnets. Use a peering connection to connect the second VPC with the rst VPC Update the routes and create new resources in the subnets of the second VPC.
 - C. Use AWS Transit Gateway to add a transit gateway and connect a second VPC with the rst VPUpdate the routes of the transit gateway and VPCs. Create new resources in the subnets of the second VPC.
-- D. Create a second VPC. Create a Site-to-Site VPN connection between the rst VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the trac through the VPN. Create new resources in the subnets of the second VPC.
+- D. Create a second VPC. Create a Site-to-Site VPN connection between the rst VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the traffic through the VPN. Create new resources in the subnets of the second VPC.
 
 ## Question #440
 
@@ -5094,10 +5107,10 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 A company has a stateless web application that runs on AWS Lambda functions that are invoked by Amazon API Gateway. The company wants to deploy the application across multiple AWS Regions to provide Regional failover capabilities.
 
-What should a solutions architect do to route trac to multiple Regions?
+What should a solutions architect do to route traffic to multiple Regions?
 
 - A. Create Amazon Route 53 health checks for each Region. Use an active-active failover conguration.
-- B. Create an Amazon CloudFront distribution with an origin for each Region. Use CloudFront health checks to route trac.
+- B. Create an Amazon CloudFront distribution with an origin for each Region. Use CloudFront health checks to route traffic.
 - C. Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. Configure the transit gateway to route requests.
 - D. Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region.
 
@@ -5255,7 +5268,7 @@ A company wants to securely exchange data between its software as a service (Saa
 ## Question #461
 
 
-A company is developing a mobile gaming app in a single AWS Region. The app runs on multiple Amazon EC2 instances in an Auto Scaling group. The company stores the app data in Amazon DynamoDB. The app communicates by using TCP trac and UDP trac between the users and the servers. The application will be used globally. The company wants to ensure the lowest possible latency for all users.
+A company is developing a mobile gaming app in a single AWS Region. The app runs on multiple Amazon EC2 instances in an Auto Scaling group. The company stores the app data in Amazon DynamoDB. The app communicates by using TCP traffic and UDP traffic between the users and the servers. The application will be used globally. The company wants to ensure the lowest possible latency for all users.
 
 Which solution will meet these requirements?
 
@@ -5267,11 +5280,11 @@ Which solution will meet these requirements?
 ## Question #462
 
 
-A company has an application that processes customer orders. The company hosts the application on an Amazon EC2 instance that saves the orders to an Amazon Aurora database. Occasionally when trac is high the workload does not process orders fast enough.
+A company has an application that processes customer orders. The company hosts the application on an Amazon EC2 instance that saves the orders to an Amazon Aurora database. Occasionally when traffic is high the workload does not process orders fast enough.
 
 What should a solutions architect do to write the orders reliably to the database as quickly as possible?
 
-- A. Increase the instance size of the EC2 instance when trac is high. Write orders to Amazon Simple Notication Service (Amazon SNS). Subscribe the database endpoint to the SNS topic.
+- A. Increase the instance size of the EC2 instance when traffic is high. Write orders to Amazon Simple Notication Service (Amazon SNS). Subscribe the database endpoint to the SNS topic.
 - B. Write orders to an Amazon Simple Queue Service (Amazon SQS) queue. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database.
 - C. Write orders to Amazon Simple Notication Service (Amazon SNS). Subscribe the database endpoint to the SNS topic. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SNS topic.
 - D. Write orders to an Amazon Simple Queue Service (Amazon SQS) queue when the EC2 instance reaches CPU threshold limits. Use scheduled scaling of EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database.
@@ -5366,7 +5379,7 @@ What should a solutions architect recommend to resolve this issue?
 ## Question #471
 
 
-A company is creating an application that runs on containers in a VPC. The application stores and accesses data in an Amazon S3 bucket. During the development phase, the application will store and access 1 TB of data in Amazon S3 each day. The company wants to minimize costs and wants to prevent trac from traversing the internet whenever possible.
+A company is creating an application that runs on containers in a VPC. The application stores and accesses data in an Amazon S3 bucket. During the development phase, the application will store and access 1 TB of data in Amazon S3 each day. The company wants to minimize costs and wants to prevent traffic from traversing the internet whenever possible.
 
 Which solution will meet these requirements?
 
@@ -5387,12 +5400,12 @@ Which method should the solutions architect select?
 ## Question #473
 
 
-A company hosts a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The website serves static content. Website trac is increasing, and the company is concerned about a potential increase in cost.
+A company hosts a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The website serves static content. Website traffic is increasing, and the company is concerned about a potential increase in cost.
 
 - A. Create an Amazon CloudFront distribution to cache state files at edge locations
 - B. Create an Amazon ElastiCache cluster. Connect the ALB to the ElastiCache cluster to serve cached files
 - C. Create an AWS WAF web ACL and associate it with the ALB. Add a rule to the web ACL to cache static files
-- D. Create a second ALB in an alternative AWS Region. Route user trac to the closest Region to minimize data transfer costs
+- D. Create a second ALB in an alternative AWS Region. Route user traffic to the closest Region to minimize data transfer costs
 
 ## Question #474
 
@@ -5468,7 +5481,7 @@ What should a solutions architect recommend to meet these requirements?
 ## Question #480
 
 
-A business application is hosted on Amazon EC2 and uses Amazon S3 for encrypted object storage. The chief information security ocer has directed that no application trac between the two services should traverse the public internet.
+A business application is hosted on Amazon EC2 and uses Amazon S3 for encrypted object storage. The chief information security ocer has directed that no application traffic between the two services should traverse the public internet.
 
 Which capability should the solutions architect use to meet the compliance requirements?
 
@@ -5677,10 +5690,10 @@ A company has a service that reads and writes large amounts of data from an Amaz
 
 Which solution will meet these requirements MOST cost-effectively?
 
-- A. Provision a dedicated EC2 NAT instance in the public subnet. Configure the route table for the private subnet to use the elastic network interface of this instance as the destination for all S3 trac.
-- B. Provision a dedicated EC2 NAT instance in the private subnet. Configure the route table for the public subnet to use the elastic network interface of this instance as the destination for all S3 trac.
-- C. Provision a VPC gateway endpoint. Configure the route table for the private subnet to use the gateway endpoint as the route for all S3 trac.
-- D. Provision a second NAT gateway. Configure the route table for the private subnet to use this NAT gateway as the destination for all S3 trac.
+- A. Provision a dedicated EC2 NAT instance in the public subnet. Configure the route table for the private subnet to use the elastic network interface of this instance as the destination for all S3 traffic.
+- B. Provision a dedicated EC2 NAT instance in the private subnet. Configure the route table for the public subnet to use the elastic network interface of this instance as the destination for all S3 traffic.
+- C. Provision a VPC gateway endpoint. Configure the route table for the private subnet to use the gateway endpoint as the route for all S3 traffic.
+- D. Provision a second NAT gateway. Configure the route table for the private subnet to use this NAT gateway as the destination for all S3 traffic.
 
 ## Question #498
 
@@ -5777,7 +5790,7 @@ Which solution will provide EC2 instances to meet these requirements MOST cost-e
 
 ## Question #506
 
-A social media company is building a feature for its website. The feature will give users the ability to upload photos. The company expects signicant increases in demand during large events and must ensure that the website can handle the upload trac from users.
+A social media company is building a feature for its website. The feature will give users the ability to upload photos. The company expects signicant increases in demand during large events and must ensure that the website can handle the upload traffic from users.
 
 Which solution meets these requirements with the MOST scalability?
 
@@ -5835,9 +5848,9 @@ A global marketing company has applications that run in the ap-southeast-2 Regio
 
 Which network design will meet these requirements?
 
-- A. Create a VPC peering connection between the eu-west-1 VPC and the ap-southeast-2 VPC. Create an inbound rule in the eu-west-1 application security group that allows trac from the database server IP addresses in the ap-southeast-2 security group.
+- A. Create a VPC peering connection between the eu-west-1 VPC and the ap-southeast-2 VPC. Create an inbound rule in the eu-west-1 application security group that allows traffic from the database server IP addresses in the ap-southeast-2 security group.
 - B. Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPC. Update the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that references the security group ID of the application servers in eu-west-1.
-- C. Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPUpdate the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that allows trac from the eu-west-1 application server IP addresses.
+- C. Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPUpdate the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that allows traffic from the eu-west-1 application server IP addresses.
 - D. Create a transit gateway with a peering attachment between the eu-west-1 VPC and the ap-southeast-2 VPC. After the transit gateways are properly peered and routing is congfiured, create an inbound rule in the database security group that references the security group ID of the application servers in eu-west-1.
 
 ## Question #511
@@ -5866,7 +5879,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 ## Question #513
 
-A social media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs a solution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable trac patterns throughout the day. The company is seeking a highly available solution that maximizes scalability.
+A social media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs a solution that automatically resizes the images so that the images can be displayed on multiple device types. The application experiences unpredictable traffic patterns throughout the day. The company is seeking a highly available solution that maximizes scalability.
 
 What should a solutions architect do to meet these requirements?
 
@@ -5885,7 +5898,7 @@ Which solution will allow the node to join the cluster?
 - A. Grant the required permission in AWS Identity and Access Management (IAM) to the AmazonEKSNodeRole IAM role.
 - B. Create interface VPC endpoints to allow nodes to access the control plane.
 - C. Recreate nodes in the public subnet. Restrict security groups for EC2 nodes.
-- D. Allow outbound trac in the security group of the nodes.
+- D. Allow outbound traffic in the security group of the nodes.
 
 ## Question #515
 
@@ -5949,7 +5962,7 @@ Which solution will meet these requirements?
 ## Question #520
 
 
-A company is designing a new web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application trac will be unpredictable. The company expects that the application read and write throughput to the database will be moderate to high. The company needs to scale in response to application trac.
+A company is designing a new web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application traffic will be unpredictable. The company expects that the application read and write throughput to the database will be moderate to high. The company needs to scale in response to application traffic.
 
 Which DynamoDB table conguration will meet these requirements MOST cost-effectively?
 
@@ -6075,7 +6088,7 @@ Which solution will meet these requirements?
 ## Question #530
 
 
-A company has an online gaming application that has TCP and UDP multiplayer gaming capabilities. The company uses Amazon Route 53 to point the application trac to multiple Network Load Balancers (NLBs) in different AWS Regions. The company needs to improve application performance and decrease latency for the online game in preparation for user growth.
+A company has an online gaming application that has TCP and UDP multiplayer gaming capabilities. The company uses Amazon Route 53 to point the application traffic to multiple Network Load Balancers (NLBs) in different AWS Regions. The company needs to improve application performance and decrease latency for the online game in preparation for user growth.
 
 Which solution will meet these requirements?
 
@@ -6159,7 +6172,7 @@ Which solution will meet these requirements MOST cost-effectively?
 
 ## Question #537
 
-A company runs a three-tier web application in the AWS Cloud that operates across three Availability Zones. The application architecture has an Application Load Balancer, an Amazon EC2 web server that hosts user session states, and a MySQL database that runs on an EC2 instance. The company expects sudden increases in application trac. The company wants to be able to scale to meet future application capacity demands and to ensure high availability across all three Availability Zones.
+A company runs a three-tier web application in the AWS Cloud that operates across three Availability Zones. The application architecture has an Application Load Balancer, an Amazon EC2 web server that hosts user session states, and a MySQL database that runs on an EC2 instance. The company expects sudden increases in application traffic. The company wants to be able to scale to meet future application capacity demands and to ensure high availability across all three Availability Zones.
 
 Which solution will meet these requirements?
 
@@ -6248,7 +6261,7 @@ A retail company uses a regional Amazon API Gateway API for its public REST APIs
 
 Which solution will meet these requirements?
 
-- A. Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point an appropriate percentage of trac to the canary stage. After API verication, promote the canary stage to the production stage.
+- A. Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point an appropriate percentage of traffic to the canary stage. After API verication, promote the canary stage to the production stage.
 - B. Create a new API Gateway endpoint with a new version of the API in OpenAPI YAML file format. Use the import-to-update operation in merge mode into the API in API Gateway. Deploy the new version of the API to the production stage.
 - C. Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON file format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.
 - D. Create a new API Gateway endpoint with new versions of the API denitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name.
@@ -6259,10 +6272,10 @@ A company wants to direct its users to a backup static error page if the company
 
 Which solution will meet these requirements?
 
-- A. Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in an Amazon S3 bucket to the records so that the trac is sent to the most responsive endpoints.
-- B. Set up a Route 53 active-passive failover conguration. Direct trac to a static error page that is hosted in an Amazon S3 bucket when Route 53 health checks determine that the ALB endpoint is unhealthy.
+- A. Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in an Amazon S3 bucket to the records so that the traffic is sent to the most responsive endpoints.
+- B. Set up a Route 53 active-passive failover conguration. Direct traffic to a static error page that is hosted in an Amazon S3 bucket when Route 53 health checks determine that the ALB endpoint is unhealthy.
 - C. Set up a Route 53 active-active conguration with the ALB and an Amazon EC2 instance that hosts a static error page as endpoints. Configure Route 53 to send requests to the instance only if the health checks fail for the ALB.
-- D. Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct trac to the website if the health check passes. Direct trac to a static error page that is hosted in Amazon S3 if the health check does not pass.
+- D. Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct traffic to the website if the health check passes. Direct traffic to a static error page that is hosted in Amazon S3 if the health check does not pass.
 
 ## Question #546
 
@@ -6306,10 +6319,10 @@ A company has created a multi-tier application for its ecommerce website. The we
 
 What should the solutions architect do to meet these requirements?
 
-- A. Deploy a NAT instance in the VPC. Route all the internet-based trac through the NAT instance.
-- B. Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound trac to the NAT gateway.
-- C. Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound trac to the internet gateway.
-- D. Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound trac to the virtual private gateway.
+- A. Deploy a NAT instance in the VPC. Route all the internet-based traffic through the NAT instance.
+- B. Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound traffic to the NAT gateway.
+- C. Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traffic to the internet gateway.
+- D. Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the virtual private gateway.
 
 ## Question #550
 
@@ -6379,7 +6392,7 @@ A solutions architect needs to design a secure solution to establish a connectio
 
 Which solution will meet these requirements?
 
-- A. Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the private subnets. Add to the endpoint a security group that has an inbound access rule that allows trac from the EC2 instances that are in the private subnets.
+- A. Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the private subnets. Add to the endpoint a security group that has an inbound access rule that allows traffic from the EC2 instances that are in the private subnets.
 - B. Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach to the interface endpoint a VPC endpoint policy that allows access from the EC2 instances that are in the private subnets.
 - C. Implement an interface VPC endpoint for Amazon SQS. Configure the endpoint to use the public subnets. Attach an Amazon SQS access policy to the interface VPC endpoint that allows requests from only a specied VPC endpoint.
 - D. Implement a gateway endpoint for Amazon SQS. Add a NAT gateway to the private subnets. Attach an IAM role to the EC2 instances that allows access to the SQS queue.
@@ -6410,7 +6423,7 @@ Which solution will meet these requirements?
 ## Question #558
 
 
-A company has two VPCs that are located in the us-west-2 Region within the same AWS account. The company needs to allow network trac between these VPCs. Approximately 500 GB of data transfer will occur between the VPCs each month.
+A company has two VPCs that are located in the us-west-2 Region within the same AWS account. The company needs to allow network traffic between these VPCs. Approximately 500 GB of data transfer will occur between the VPCs each month.
 
 What is the MOST cost-effective solution to connect these VPCs?
 
@@ -6542,7 +6555,7 @@ Which combination of storage and caching should the solutions architect use?
 
 ## Question #569
 
-An Amazon EventBridge rule targets a third-party API. The third-party API has not received any incoming trac. A solutions architect needs to determine whether the rule conditions are being met and if the rule's target is being invoked.
+An Amazon EventBridge rule targets a third-party API. The third-party API has not received any incoming traffic. A solutions architect needs to determine whether the rule conditions are being met and if the rule's target is being invoked.
 
 Which solution will meet these requirements?
 
@@ -6656,7 +6669,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 ## Question #579
 
 
-A company runs an application that uses Amazon RDS for PostgreSQL. The application receives trac only on weekdays during business hours. The company wants to optimize costs and reduce operational overhead based on this usage.
+A company runs an application that uses Amazon RDS for PostgreSQL. The application receives traffic only on weekdays during business hours. The company wants to optimize costs and reduce operational overhead based on this usage.
 
 Which solution will meet these requirements?
 
@@ -6695,10 +6708,10 @@ An ecommerce company uses Amazon Route 53 as its DNS provider. The company hosts
 
 Which solution will meet these requirements?
 
-- A. Set up a geolocation routing policy. Send the trac that is near us-west-1 to the on-premises data center. Send the trac that is near eucentral-1 to eu-central-1.
-- B. Set up a simple routing policy that routes all trac that is near eu-central-1 to eu-central-1 and routes all trac that is near the on-premises datacenter to the on-premises data center.
+- A. Set up a geolocation routing policy. Send the traffic that is near us-west-1 to the on-premises data center. Send the traffic that is near eucentral-1 to eu-central-1.
+- B. Set up a simple routing policy that routes all traffic that is near eu-central-1 to eu-central-1 and routes all traffic that is near the on-premises datacenter to the on-premises data center.
 - C. Set up a latency routing policy. Associate the policy with us-west-1.
-- D. Set up a weighted routing policy. Split the trac evenly between eu-central-1 and the on-premises data center.
+- D. Set up a weighted routing policy. Split the traffic evenly between eu-central-1 and the on-premises data center.
 
 ## Question #583
 
@@ -6839,7 +6852,7 @@ Which solution will reduce the launch time of the application during the next te
 ## Question #595
 
 
-A company's applications run on Amazon EC2 instances in Auto Scaling groups. The company notices that its applications experience sudden trac increases on random days of the week. The company wants to maintain application performance during sudden trac increases.
+A company's applications run on Amazon EC2 instances in Auto Scaling groups. The company notices that its applications experience sudden traffic increases on random days of the week. The company wants to maintain application performance during sudden traffic increases.
 
 Which solution will meet these requirements MOST cost-effectively?
 
@@ -6851,7 +6864,7 @@ Which solution will meet these requirements MOST cost-effectively?
 ## Question #596
 
 
-An ecommerce application uses a PostgreSQL database that runs on an Amazon EC2 instance. During a monthly sales event, database usage increases and causes database connection issues for the application. The trac is unpredictable for subsequent monthly sales events, which impacts the sales forecast. The company needs to maintain performance when there is an unpredictable increase in trac.
+An ecommerce application uses a PostgreSQL database that runs on an Amazon EC2 instance. During a monthly sales event, database usage increases and causes database connection issues for the application. The traffic is unpredictable for subsequent monthly sales events, which impacts the sales forecast. The company needs to maintain performance when there is an unpredictable increase in traffic.
 
 Which solution resolves this issue in the MOST cost-effective way?
 
@@ -7006,8 +7019,8 @@ The company's security team recommends to increase the security of the applicati
 
 What should a solutions architect do to meet these requirements?
 
-- A. Associate an AWS WAF web ACL with the ALB. Use IP rule sets on the ALB to lter trac. Update the IP addresses in the rule to include the registered IP addresses.
-- B. Deploy AWS Firewall Manager to manage the ALConfigure rewall rules to restrict trac to the ALModify the rewall rules to include the registered IP addresses.
+- A. Associate an AWS WAF web ACL with the ALB. Use IP rule sets on the ALB to lter traffic. Update the IP addresses in the rule to include the registered IP addresses.
+- B. Deploy AWS Firewall Manager to manage the ALConfigure rewall rules to restrict traffic to the ALModify the rewall rules to include the registered IP addresses.
 - C. Store the IP addresses in an Amazon DynamoDB table. Configure an AWS Lambda authorization function on the ALB to validate that incoming requests are from the registered IP addresses.
 - D. Configure the network ACL on the subnet that contains the public interface of the ALB. Update the ingress rules on the network ACL with entries for each of the registered IP addresses.
 
@@ -7306,13 +7319,13 @@ Which storage solution should a solutions architect recommend to meet these requ
 ## Question #633
 
 
-A company manages an application that stores data on an Amazon RDS for PostgreSQL Multi-AZ DB instance. Increases in trac are causing performance problems. The company determines that database queries are the primary reason for the slow performance.
+A company manages an application that stores data on an Amazon RDS for PostgreSQL Multi-AZ DB instance. Increases in traffic are causing performance problems. The company determines that database queries are the primary reason for the slow performance.
 
 What should a solutions architect do to improve the application's performance?
 
-- A. Serve read trac from the Multi-AZ standby replica.
+- A. Serve read traffic from the Multi-AZ standby replica.
 - B. Configure the DB instance to use Transfer Acceleration.
-- C. Create a read replica from the source DB instance. Serve read trac from the read replica.
+- C. Create a read replica from the source DB instance. Serve read traffic from the read replica.
 - D. Use Amazon Kinesis Data Firehose between the application and Amazon RDS to increase the concurrency of database requests.
 
 ## Question #634
@@ -7380,7 +7393,7 @@ Which solution will meet these requirements?
 
 A company is building a new furniture inventory application. The company has deployed the application on a eet ofAmazon EC2 instances across multiple Availability Zones. The EC2 instances run behind an Application Load Balancer (ALB) in their VPC.
 
-A solutions architect has observed that incoming trac seems to favor one EC2 instance, resulting in latency for some requests.
+A solutions architect has observed that incoming traffic seems to favor one EC2 instance, resulting in latency for some requests.
 
 What should the solutions architect do to resolve this issue?
 
@@ -7417,18 +7430,18 @@ Which solution is the MOST scalable and cost-effective way to meet these require
 ## Question #642
 
 
-A company wants to run a gaming application on Amazon EC2 instances that are part of an Auto Scaling group in the AWS Cloud. The application will transmit data by using UDP packets. The company wants to ensure that the application can scale out and in as trac increases and decreases.
+A company wants to run a gaming application on Amazon EC2 instances that are part of an Auto Scaling group in the AWS Cloud. The application will transmit data by using UDP packets. The company wants to ensure that the application can scale out and in as traffic increases and decreases.
 
 What should a solutions architect do to meet these requirements?
 
 - A. Attach a Network Load Balancer to the Auto Scaling group.
 - B. Attach an Application Load Balancer to the Auto Scaling group.
-- C. Deploy an Amazon Route 53 record set with a weighted policy to route trac appropriately.
+- C. Deploy an Amazon Route 53 record set with a weighted policy to route traffic appropriately.
 - D. Deploy a NAT instance that is congfiured with port forwarding to the EC2 instances in the Auto Scaling group.
 
 ## Question #643
 
-A company runs several websites on AWS for its different brands. Each website generates tens of gigabytes of web trac logs each day. A solutions architect needs to design a scalable solution to give the company's developers the ability to analyze trac patterns across all the company's websites. This analysis by the developers will occur on demand once a week over the course of several months. The solution must support queries with standard SQL.
+A company runs several websites on AWS for its different brands. Each website generates tens of gigabytes of web traffic logs each day. A solutions architect needs to design a scalable solution to give the company's developers the ability to analyze traffic patterns across all the company's websites. This analysis by the developers will occur on demand once a week over the course of several months. The solution must support queries with standard SQL.
 
 Which solution will meet these requirements MOST cost-effectively?
 
@@ -7476,7 +7489,7 @@ Which solution will meet these requirements?
 ## Question #647
 
 
-A gaming company is building an application with Voice over IP capabilities. The application will serve trac to users across the world. The application needs to be highly available with an automated failover across AWS Regions. The company wants to minimize the latency of users without relying on IP address caching on user devices.
+A gaming company is building an application with Voice over IP capabilities. The application will serve traffic to users across the world. The application needs to be highly available with an automated failover across AWS Regions. The company wants to minimize the latency of users without relying on IP address caching on user devices.
 
 What should a solutions architect do to meet these requirements?
 
@@ -7641,7 +7654,7 @@ A company hosts an application on Amazon EC2 On-Demand Instances in an Auto Scal
 
 Which solution will meet these requirements?
 
-- A. Configure an Application Load Balancer to distribute trac properly to the instances.
+- A. Configure an Application Load Balancer to distribute traffic properly to the instances.
 - B. Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on memory utilization.
 - C. Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on CPU utilization.
 - D. Configure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours.
@@ -7710,7 +7723,7 @@ Which solution will meet these requirements?
 ## Question #666
 
 
-A startup company is hosting a website for its customers on an Amazon EC2 instance. The website consists of a stateless Python application and a MySQL database. The website serves only a small amount of trac. The company is concerned about the reliability of the instance and needs to migrate to a highly available architecture. The company cannot modify the application code.
+A startup company is hosting a website for its customers on an Amazon EC2 instance. The website consists of a stateless Python application and a MySQL database. The website serves only a small amount of traffic. The company is concerned about the reliability of the instance and needs to migrate to a highly available architecture. The company cannot modify the application code.
 
 Which combination of actions should a solutions architect take to achieve high availability for the website? (Choose two.)
 
@@ -7718,7 +7731,7 @@ Which combination of actions should a solutions architect take to achieve high a
 - B. Migrate the database to an Amazon RDS for MySQL Multi-AZ DB instance.
 - C. Migrate the database to Amazon DynamoDB, and enable DynamoDB auto scaling.
 - D. Use AWS DataSync to synchronize the database data across multiple EC2 instances.
-- E. Create an Application Load Balancer to distribute trac to an Auto Scaling group of EC2 instances that are distributed across two Availability Zones.
+- E. Create an Application Load Balancer to distribute traffic to an Auto Scaling group of EC2 instances that are distributed across two Availability Zones.
 
 ## Question #667
 
@@ -7807,13 +7820,13 @@ Which solution will meet these requirements?
 ## Question #674
 
 
-A company runs a web application on Amazon EC2 instances in an Auto Scaling group. The application uses a database that runs on an Amazon RDS for PostgreSQL DB instance. The application performs slowly when trac increases. The database experiences a heavy read load during periods of high trac.
+A company runs a web application on Amazon EC2 instances in an Auto Scaling group. The application uses a database that runs on an Amazon RDS for PostgreSQL DB instance. The application performs slowly when traffic increases. The database experiences a heavy read load during periods of high traffic.
 
 Which actions should a solutions architect take to resolve these performance issues? (Choose two.)
 
 - A. Turn on auto scaling for the DB instance.
-- B. Create a read replica for the DB instance. Configure the application to send read trac to the read replica.
-- C. Convert the DB instance to a Multi-AZ DB instance deployment. Configure the application to send read trac to the standby DB instance.
+- B. Create a read replica for the DB instance. Configure the application to send read traffic to the read replica.
+- C. Convert the DB instance to a Multi-AZ DB instance deployment. Configure the application to send read traffic to the standby DB instance.
 - D. Create an Amazon ElastiCache cluster. Configure the application to cache query results in the ElastiCache cluster.
 - E. Configure the Auto Scaling group subnets to ensure that the EC2 instances are provisioned in the same Availability Zone as the DB instance.
 
@@ -7831,7 +7844,7 @@ Which solution will meet these requirements with the LEAST administrative effort
 
 ## Question #676
 
-A company's application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an Amazon VPC. The company wants to capture information about trac to and from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon OpenSearch Service for analysis.
+A company's application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an Amazon VPC. The company wants to capture information about traffic to and from the network interfaces in near real time in its Amazon VPC. The company wants to send the information to Amazon OpenSearch Service for analysis.
 
 Which solution will meet these requirements?
 
