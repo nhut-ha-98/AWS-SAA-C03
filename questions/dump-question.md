@@ -5540,7 +5540,7 @@ What should a solutions architect recommend to meet these requirements?
 - C. Use AWS Cong to record the inventory of resources that are used in the prototype infrastructure. Use AWS Cong to deploy the prototype infrastructure into two Availability Zones.
 - D. Use AWS Elastic Beanstalk and configure it to use an automated reference to the prototype infrastructure to automatically deploy new environments in two Availability Zones.
 
-## Question #480
+~~## Question #480~~
 
 
 A business application is hosted on Amazon EC2 and uses Amazon S3 for encrypted object storage. The chief information security ocer has directed that no application traffic between the two services should traverse the public internet.
@@ -5552,6 +5552,9 @@ Which capability should the solutions architect use to meet the compliance requi
 - C. Private subnet
 - D. Virtual private gateway
 
+
+~~## Question #481~~
+
 A company hosts a three-tier web application in the AWS Cloud. A Multi-AZAmazon RDS for MySQL server forms the database layer Amazon ElastiCache forms the cache layer. The company wants a caching strategy that adds or updates data in the cache when a customer adds an item to the database. The data in the cache must always match the data in the database.
 
 Which solution will meet these requirements?
@@ -5561,7 +5564,7 @@ Which solution will meet these requirements?
 - C. Implement the adding TTL caching strategy
 - D. Implement the AWS AppCong caching strategy
 
-## Question #482
+~~## Question #482~~
 
 
 A company wants to migrate 100 GB of historical data from an on-premises location to an Amazon S3 bucket. The company has a 100 megabits per second (Mbps) internet connection on premises. The company needs to encrypt the data in transit to the S3 bucket. The company will store new data directly in Amazon S3.
@@ -5573,7 +5576,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use AWS Snowball to move the data to an S3 bucket
 - D. Set up an IPsec VPN from the on-premises location to AWS. Use the s3 cp command in the AWS CLI to move the data directly to an S3 bucket
 
-## Question #483
+## Question #483 ✨ *Recurring container job + Windows + short runtime → ECS Fargate Scheduled Task*
 
 
 A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The job runs every 10 minutes. The job's runtime varies between 1 minute and 3 minutes.
@@ -5583,9 +5586,9 @@ Which solution will meet these requirements MOST cost-effectively?
 - A. Create an AWS Lambda function based on the container image of the job. Configure Amazon EventBridge to invoke the function every 10 minutes.
 - B. Use AWS Batch to create a job that uses AWS Fargate resources. Configure the job scheduling to run every 10 minutes.
 - C. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a scheduled task based on the container image of the job to run every 10 minutes.
-- D. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a standalone task based on the container image of the job. Use Windows task scheduler to run the job every
+- D. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a standalone task based on the container image of the job. Use Windows task scheduler to run the job every 10 minutes.
 
-10 minutes.
+## Question #484 ✨
 
 A company wants to move from many standalone AWS accounts to a consolidated, multi-account architecture. The company plans to create many new AWS accounts for different business units. The company needs to authenticate access to these AWS accounts by using a centralized corporate directory service.
 
@@ -5622,6 +5625,9 @@ A. Use Amazon S3 to host static content. Use Amazon Elastic Container Service (A
 - C. Use Amazon S3 to host static content. Use Amazon Elastic Kubernetes Service (Amazon EKS) with AWS Fargate for compute power. Use a managed Amazon RDS cluster for the database.
 - D. Use Amazon EC2 Reserved Instances to host static content. Use Amazon Elastic Kubernetes Service (Amazon EKS) with Amazon EC2 for compute power. Use a managed Amazon RDS cluster for the database.
 
+
+## Question #487
+
 A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a file system be mountable by multiple Linux instances in AWS and on premises through native protocols, and have no minimum size requirements. The company has set up a Site-to-Site VPN for access from its on-premises network to its VPC.
 
 Which storage solution meets these requirements?
@@ -5631,7 +5637,7 @@ Which storage solution meets these requirements?
 - C. Amazon Elastic File System (Amazon EFS) with multiple mount targets
 - D. Amazon Elastic File System (Amazon EFS) with a single mount target and multiple access points
 
-## Question #488
+## Question #488 ✨✨✨❗ *Any requirement that includes “including the root user” → SCP*
 
 
 A 4-year-old media company is using the AWS Organizations all features feature set to organize its AWS accounts. According to the company's nance team, the billing information on the member accounts must not be accessible to anyone, including the root user of the member accounts.
@@ -5657,7 +5663,8 @@ Which solution will meet these requirements with the LEAST development effort?
 - C. Configure an Amazon SNS dead letter queue that has an Amazon Simple Queue Service (Amazon SQS) target with a retention period of 14 days.
 - D. Configure an Amazon SNS dead letter queue that has an Amazon DynamoDB target with a TTL attribute set for a retention period of 14 days.
 
-<!-- image -->
+## Question #490
+
 
 A gaming company uses Amazon DynamoDB to store user information such as geographic location, player data, and leaderboards. The company needs to configure continuous backups to an Amazon S3 bucket with a minimal amount of coding. The backups must not affect availability of the application and must not affect the read capacity units (RCUs) that are dened for the table.
 
@@ -5716,7 +5723,6 @@ The administrator is using an IAM role that has the following IAM policy attache
 
 What is the cause of the unsuccessful request?
 
-## lamrushabhshahh
 
 - A. The EC2 instance has a resource-based policy with a Deny statement.
 - B. The principal has not been specied in the policy statement.
