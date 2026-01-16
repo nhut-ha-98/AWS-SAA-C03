@@ -1,4 +1,4 @@
-$SERVICE = Amazon CloudWatch
+$SERVICE = Amazon Cloud Trail
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
@@ -83,7 +83,10 @@ Do NOT go too deep into low-level technical details.
 - Tập trung vào pattern hay xuất hiện trong đề thi hoặc thực tế (best practice)
 
 🧠 CHỨC NĂNG ĐẶC BIỆT (nếu có)
-- Liệt kê các tính năng đặc biệt thường bị sót khi ra thi
+- Liệt kê các tính năng đặc biệt thường bị sót khi ra thi, giải thích cơ bản:
++ Là gì
++ Use case
++ Ghi chú
 
 GENERAL RULES
 - Write explanations in VIETNAMESE. (important)
